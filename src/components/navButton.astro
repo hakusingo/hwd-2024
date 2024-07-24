@@ -1,0 +1,27 @@
+---
+
+---
+
+<div class="sticky top-[0px] z-[50] w-full max-w-[500px] lg:hidden">
+    <button class="absolute top-[24px] right-[24px] items-end justify-end flex-col flex spNavBtn">
+        <div class="spNavBtnLineTop h-[12px] w-[54px] border-[3px] border-black bg-white"></div>
+        <div class="spNavBtnLineBtm h-[12px] w-[54px] border-[3px] border-black mt-[6px] bg-white"></div>
+    </button>
+</div>
+
+<style>
+    /* 初期スタイル */
+    .spNavBtnLineTop,
+    .spNavBtnLineBtm {
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* バツスタイル */
+    .spNavBtnLineTop.transform-to-x {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .spNavBtnLineBtm.transform-to-x {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+</style>

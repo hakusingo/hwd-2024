@@ -1,0 +1,63 @@
+---
+import Container from '../container.astro';
+import { Image } from "astro:assets";
+import Ttl from '../util/ttl.astro';
+
+const services = [
+    {
+        text: `1983年うるま市生まれ、うるま市育ち。30代までは飲食業で働き、六本木で韓国料理店の店長を務め、カジュアルフレンチやスペインバルでも経験を積む。地元に戻り、うるま市赤道でバーを営む。`,
+    },
+    {
+        text: "30代からはブログを書き始め、サイト制作の勉強を開始。ブログは月間15,000PVを達成。HTML/CSS/JavaScript/PHPなどのプログラミング言語を習得して、サイト構築ができるようになる。同時に、イラストレーターやフォトショップを使ってデザインも手掛けるように。",
+    },
+    {
+        text: "Googleスプレッドシートやエクセルを活用したシステム開発を独学で行い、ReactやLaravelを用いたアプリ開発も行う。現在は、主にサイト制作をメインに活動しています。地元で輝くお客様をウェブでサポートできることに幸せを感じてます。バスケ、散歩、読書好き。",
+    },
+];
+---
+
+<Container class="pb-[120px]">
+    <Ttl ttl="プロフィール" mt="pt-[100px]" />
+    <div class="flex justify-center">
+        <img
+        class="mb-[16px]"
+        src="/images/top/profile.png"
+        alt="PROFILE"
+        width={180}
+        />
+    </div>
+    <p class="text-center text-[20px] mb-[24px]">トマリ シンゴ</p>
+    <div class="flex flex-col gap-y-[24px] relative pb-[240px]">
+        {services.map((service) => (
+            <div>
+                <p class="inline-block px-[2em] mb-[12px]">{service.text}</p>
+            </div>
+        ))}
+        <img
+            class="absolute top-[-460px] left-[-100px] z-[20]"
+            src="/images/common/circle-top.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute top-[20%] right-[-100px] z-[-1]"
+            src="/images/common/circle-mid.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute bottom-[30%] left-[-72px] z-[-1]"
+            src="/images/common/circle-bottom.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute target fade-in-left bottom-[-100px] w-[160px] z-30 right-[30px]"
+            src="/images/top/pass.png"
+            alt="シュートメン"
+            width="140"
+        />
+        <img
+            class="underCircle absolute z-[20] bottom-[-144px] right-[-24px] left-[-24px] w-[100vw] max-w-[500px]"
+            src="/images/common/under-curve-gray.svg"
+            alt="circle"
+        />
+    </div>
+</Container>

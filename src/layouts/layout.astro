@@ -1,0 +1,31 @@
+---
+import '../styles/config.css';
+import '../styles/default.css';
+import '../styles/layout.css';
+
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+import Meta from '../components/meta.astro';
+import Spnav from '../components/spnav.astro';
+import NavButton from '../components/navButton.astro';
+
+const props = Astro.props;
+---
+
+<html lang="ja">
+	<head>
+		<Meta {...props} />
+	</head>
+	<body class="bg-[#f2b174] flex flex-col items-center lg:items-end">
+        <NavButton />
+        <div class="mainContent max-w-[500px] w-full relative -z-10 bg-white overflow-hidden">
+            <Header />
+            <Spnav />
+            <main>
+                <slot />
+            </main>
+            <Footer />
+        </div>
+	</body>
+</html>
+

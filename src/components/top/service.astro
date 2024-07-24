@@ -1,0 +1,114 @@
+---
+import Container from '../container.astro';
+import Ttl from '../util/ttl.astro';
+
+const services = [
+    {
+        title: "ホームページ制作",
+        image: "/images/top/service_01.png",
+        alt: "ホームページ制作",
+        description: "お客様のニーズに合わせた魅力的で使いやすいホームページを制作いたします。最新の技術とデザインを駆使して、ビジネスのオンラインプレゼンスを強化します。"
+    },
+    {
+        title: "SEO対策",
+        image: "/images/top/service_02.png",
+        alt: "SEO対策",
+        description: "検索エンジンのランキングを向上させ、ビジネスのオンライン可視性を高めます。最新のSEO戦略を駆使して、トラフィックとコンバージョン率を向上させます。"
+    },
+    {
+        title: "アプリ/システム構築",
+        image: "/images/top/service_03.png",
+        alt: "アプリ/システム構築",
+        description: "ReactやLaravelを使用したアプリ開発、Googleスプレッドシートやエクセルを活用したシステム構築を行います。業務効率化や顧客管理など、様々なニーズに対応したソリューションを提供します。"
+    },
+    {
+        title: "AIコンテンツ制作",
+        image: "/images/top/service_04.png",
+        alt: "AIコンテンツ制作",
+        description: "AI技術を活用して文章やイラストを作成いたします。生成AIを使ったコンテンツ制作から、その活用方法のアドバイスまで幅広くサポートします。"
+    }
+];
+---
+
+<Container >
+    <div class="relative">
+        <h3 class="about target pt-[80px] relative font-m font-[700] text-[24px] text-center mb-[24px]">“ハクウェブデザインって？“</h3>
+        <p class="text-center flex flex-col gap-y-[4px]">
+            <span class="inline-block">“ハクウェブデザイン“は</span>
+            <span class="inline-block">沖縄県うるま市近辺で</span>
+            <span class="inline-block">ウェブサイト関連、印刷物</span>
+            <span class="inline-block">AI関連の指導、SNS運用</span>
+            <span class="inline-block">などのお手伝いをしています。</span>
+        </p>
+        <img
+            src="/images/top/faru.png"
+            class="target fade-in-right absolute bottom-[0px] left-[-60px] z-[10] w-[120px]"
+            alt="ファルコさん"
+            width="120"
+        >
+        <img
+            src="/images/top/riba.png"
+            class="target fade-in-left absolute bottom-[0px] right-[-60px] z-[10] w-[130px]"
+            alt="リバオー"
+            width="130"
+        >
+    </div>
+    <Ttl ttl="サービス" mt="mt-[120px]" />
+    <div class="flex flex-col gap-y-[32px] relative pb-[240px]">
+        {services.map((service) => (
+            <div>
+                <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">{service.title}</h3>
+                <img class="px-[24px] mb-[16px]" src={service.image} alt={service.alt} />
+                <p class="px-[16px] tracking-[0.1em]">{service.description}</p>
+            </div>
+        ))}
+        <img
+            class="absolute top-[-600px] left-[-100px] z-[20]"
+            src="/images/common/circle-top.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute top-[10%] right-[-100px] z-[-1]"
+            src="/images/common/circle-mid.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute bottom-[30%] left-[-72px] z-[-1]"
+            src="/images/common/circle-bottom.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute target fade-in-bottom bottom-[20px] w-[160px] z-30 right-[0]"
+            src="/images/top/shuto.png"
+            alt="シュートメン"
+            width="140"
+        />
+        <img
+            class="underCircle absolute z-[20] bottom-0 right-[-24px] left-[-24px] w-[100vw] max-w-[500px]"
+            src="/images/common/under-curve-pink.svg"
+            alt="circle"
+        />
+    </div>
+</Container>
+
+<style>
+    .about::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 10px;
+        width: 300px;
+        background-color: #B2EDFF;
+        opacity: 0.8;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+    .h3 {
+        background: linear-gradient(transparent 70%, #B2EDFF 50%);
+    }
+    .h3::before {
+        content: "・";
+    }
+</style>

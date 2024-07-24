@@ -1,0 +1,31 @@
+---
+const { maxWidth = '500px', cls } = Astro.props;
+---
+
+<div class=`container ${cls} relative`>
+    <slot />
+</div>
+
+<style define:vars={{ maxWidth }}>
+    @layer layout {
+        .container {
+            max-width: var(--maxWidth);
+            margin-inline: auto;
+            padding-inline: 24px;
+        }
+
+        .container .container {
+            padding-inline: 0;
+        }
+    }
+
+    .bg-pink {
+        background-color: rgba(255, 160, 122, 0.3);
+    }
+
+    .bg-glay {
+        background-color: rgba(196, 196, 196, 0.3);
+    }
+
+
+</style>

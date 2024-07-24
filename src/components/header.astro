@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import hero from '/src/images/top/hero.jpg';
+---
+
+<header class="h-[100vh] relative max-h-[640px]">
+    <Image
+        src={hero}
+        alt="沖縄の夕日が綺麗なビーチ"
+        loading="eager"
+        decoding="sync"
+        class="header-hero"
+        width="780"
+    />
+    <img
+        src="/images/common/under-curve.svg"
+        class="w-full absolute bottom-[-1px] z-[1]"
+        alt="白いカーブ"
+    />
+    <img
+        src="/images/top/hero-sub.svg"
+        class="absolute right-[24px] top-[106px]"
+        alt="うるま市のウェブ屋さん"
+        width="143"
+    >
+    <img
+        src="/images/top/hero-ttl.svg"
+        class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-60%]"
+        alt="うるま市のウェブ屋さん"
+        width="319"
+    >
+</header>
+
+<style>
+    .header-hero {
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        max-height: 640px;
+    }
+
+    .hero-sub {
+        color: #fff;
+        text-shadow: 1px 1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,-1px -1px 0 #000;
+        font-weight: 700;
+    }
+</style>
