@@ -3,30 +3,31 @@ import Container from './container.astro';
 
 const services = [
     {
+        ttl: "TOP",
+        url: "/",
+    },
+    {
         ttl: "プライバシーポリシー",
-        url: "https://google.com",
+        url: "/policy",
     },
     {
         ttl: "利用規約",
-        url: "https://google.com",
+        url: "/kiyaku",
     },
     {
         ttl: "お問い合わせ",
-        url: "https://google.com",
+        url: "/contact",
     },
-    {
-        ttl: "サービス",
-        url: "https://google.com",
-    },
+
 ];
 ---
 
-<Container cls="bg-[#FFA07A] pb-[32px] z-[20]">
+<Container cls="bg-[#FFA07A] pb-[40px] z-[20] pt-[40px]">
     <div class="flex flex-col gap-y-[24px] relative">
         <ul class="flex flex-col gap-y-[12px] pb-[32px]">
             {services.map((service) => (
-                <li class="flex justify-center text-white tracking-[0.05em] underline underline-offset-[2px] font-m">
-                    <a href={service.url} class="inline-block">{service.ttl}</a>
+                <li class="flex justify-center text-white tracking-[0.05em] font-[700] font-m">
+                    <a rel="prefetch" href={service.url} class="inline-block">{service.ttl}</a>
                 </li>
             ))}
         </ul>

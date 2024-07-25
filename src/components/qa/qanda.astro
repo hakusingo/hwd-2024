@@ -13,6 +13,7 @@ const groupedFaqs = faqs.reduce((acc, faq) => {
 <Container >
     <Ttl ttl="よくある質問" mt="mt-[80px] mb-[48px]" />
     <div class="pb-[260px] flex flex-col gap-y-[32px] relative text-[black]">
+      <div class="max-w-[380px] mx-auto">
             {Object.keys(groupedFaqs).map((category, index) => (
               <div key={index} class="mb-8 tracking-[0.05em]">
                 <div class="border-b-[4px] pb-[14px] target mb-[32px] fade-in-right">
@@ -22,7 +23,7 @@ const groupedFaqs = faqs.reduce((acc, faq) => {
                   {groupedFaqs[category].map((faq, faqIndex) => (
                     <div class="accordion border-b border-gray-300 mb-4" key={faqIndex}>
                       <button
-                        class="accordion-header flex justify-between items-center w-full py-4 pb-[24px] px-5 text-left text-gray-700 font-medium focus:outline-none"
+                        class="accordion-header flex justify-between items-center w-full py-4 pb-[24px] px-5 text-left font-medium focus:outline-none"
                         onClick={(event) => {
                           const header = event.currentTarget;
                           const content = header.nextElementSibling;
@@ -51,13 +52,14 @@ const groupedFaqs = faqs.reduce((acc, faq) => {
                         </span>
                       </button>
                       <div class="accordion-content hidden px-5 pb-4">
-                        <p class="text-gray-600">A {faq.answer}</p>
+                        <p class="">A {faq.answer}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
             ))}
+      </div>
               <img
                   class="absolute top-[100px] left-[-120px] z-[-10]"
                   src="/images/common/circle-top.svg"
@@ -74,9 +76,9 @@ const groupedFaqs = faqs.reduce((acc, faq) => {
                    alt="circle"
                />
                <img
-               class="absolute target bottom-[80px] w-[180px] z-30 right-[0]"
+               class="absolute target bottom-[30px] w-[180px] z-30 right-[30px]"
                src="/images/top/riba.png"
-               alt="ファルコさん"
+               alt="リバオー"
                width="140"
            />
           <img

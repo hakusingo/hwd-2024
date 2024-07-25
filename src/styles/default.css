@@ -118,6 +118,15 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
+
+	.fade-in-bottom-right {
+		transform: scale(0.5) translate(40px, 40px);
+	}
+
+	.fade-in-bottom-right.visible {
+		opacity: 1;
+		transform: scale(1) translate(0, 0);
+	}
 	
 	/* その場でふわっと表示 */
 	.target:not(.fade-in-right):not(.fade-in-left):not(.fade-in-bottom).visible {

@@ -35,7 +35,6 @@ document.querySelector('.spNavBtn').addEventListener('click', function() {
 });
 
 const spNavAnc = document.querySelectorAll('.SpNavAnc');
-console.log(spNavAnc)
 spNavAnc.forEach(anc => {
     anc.addEventListener('click', function () {
         const lineTop = document.querySelector('.spNavBtnLineTop');

@@ -15,10 +15,10 @@ const services = [
         description: "お客様のニーズに合わせた魅力的で使いやすいホームページを制作いたします。最新の技術とデザインを駆使して、ビジネスのオンラインプレゼンスを強化します。"
     },
     {
-        title: "SEO対策",
+        title: "DTP(名刺・チラシ等)",
         image: product02,
-        alt: "SEO対策",
-        description: "検索エンジンのランキングを向上させ、ビジネスのオンライン可視性を高めます。最新のSEO戦略を駆使して、トラフィックとコンバージョン率を向上させます。"
+        alt: "DTP(名刺・チラシ等)",
+        description: "お客様のニーズに合わせた魅力的で使いやすいホームページを制作いたします。最新の技術とデザインを駆使して、ビジネスのオンラインプレゼンスを強化します。"
     },
     {
         title: "アプリ/システム構築",
@@ -41,9 +41,9 @@ const services = [
         <p class="text-center flex flex-col gap-y-[4px]">
             <span class="inline-block">“ハクウェブデザイン“は</span>
             <span class="inline-block">沖縄県うるま市近辺で</span>
-            <span class="inline-block">ウェブサイト関連、印刷物</span>
-            <span class="inline-block">AI関連の指導、SNS運用</span>
-            <span class="inline-block">などのお手伝いをしています。</span>
+            <span class="inline-block">ウェブサイト関連、各種印刷物</span>
+            <span class="inline-block">AIコンテンツ作成、生成AIの指導</span>
+            <span class="inline-block">SNS運用などをしています。</span>
         </p>
         <img
             src="/images/top/faru.png"
@@ -61,9 +61,9 @@ const services = [
     <Ttl ttl="サービス" mt="mt-[120px]" />
     <div class="flex flex-col gap-y-[32px] relative pb-[240px]">
         {services.map((service) => (
-            <div>
+            <div class="max-w-[400px] mx-auto">
                 <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">{service.title}</h3>
-                <Image class="px-[24px] mb-[16px]" src={service.image} alt={service.alt} />
+                <Image class="target px-[24px] mb-[16px]" src={service.image} alt={service.alt} />
                 <p class="px-[16px] tracking-[0.1em]">{service.description}</p>
             </div>
         ))}

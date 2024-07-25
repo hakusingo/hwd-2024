@@ -4,20 +4,20 @@ import Ttl from '../util/ttl.astro';
 
 const services = [
     {
-        date: "2024年11月11日",
-        txt: "サイトをリニューアルしました。",
+        date: "2024年10月1日",
+        txt: `AIブログをスタートしました。ぜひ一度ご覧ください。文章や構成、画像もAIに書いてもらっています。\nhttps://aiblog.haku-design.net/`,
     },
 ];
 ---
 
 <Container cls="bg-glay mt-[144px] pb-[120px]">
     <Ttl ttl="ニュース" mt="pt-[100px]" />
-    <div class="flex flex-col gap-y-[24px] relative pb-[240px]">
-        <div class="bg-white border-t-[2px] border-b-[2px] border-[black] pt-[32px] bg-opacity-[0.725] flex flex-col gap-y-[24px]">
+    <div class="flex flex-col gap-y-[24px] relative pb-[180px]">
+        <div class="max-w-[380px] mx-auto bg-white border-t-[2px] border-b-[2px] border-[black] pt-[32px] bg-opacity-[0.725] flex flex-col gap-y-[24px]">
             {services.map((service) => (
                 <div class="[&:not(:last-child)]:border-b-2  mx-[24px] pb-[24px] tracking-[0.05em] flex flex-col">
                     <time class="font-[700] text-[14px] mb-[6px] inline-block" datetime={service.date}>{service.date}</time>
-                    <p class="inline-block">{service.txt}</p>
+                    <p class="inline-block whitespace-pre-wrap">{service.txt}</p>
                 </div>
             ))}
         </div>
@@ -37,7 +37,7 @@ const services = [
             alt="circle"
         />
         <img
-            class="absolute target bottom-[-100px] w-[160px] z-30 right-[30px]"
+            class="absolute target fade-in-right bottom-[-100px] w-[160px] z-30 right-[30px]"
             src="/images/top/dori.png"
             alt="ドリブルメン"
             width="140"

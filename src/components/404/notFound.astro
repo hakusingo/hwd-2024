@@ -1,0 +1,47 @@
+---
+import Container from '../container.astro';
+import Ttl from '../util/ttl.astro';
+
+---
+
+<Container >
+    <Ttl ttl="404 NotFound" mt="mt-[80px] mb-[40px]" />
+
+
+    <div class="max-w-[400px] px-[24px] mx-auto leading-[1.6] tracking-[0.05em] pb-[340px]">
+        <div class="mb-[40px]">
+            <p class="mb-[1em]">申し訳ありません。お探しのページは見つかりませんでした。</p>
+        </div>
+        <img
+            class="absolute top-[-600px] left-[-100px] z-[20]"
+            src="/images/common/circle-top.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute top-[10%] right-[-100px] z-[-1]"
+            src="/images/common/circle-mid.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute bottom-[30%] left-[-72px] z-[-1]"
+            src="/images/common/circle-bottom.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute target fade-in-right bottom-[60px] w-[180px] z-30 right-[60px]"
+            src="/images/top/dori.png"
+            alt="ファルコさん"
+            width="140"
+        />
+        <img
+            class="underCircle absolute z-[20] bottom-0 right-[0px] left-[0px] max-w-[unset] w-full"
+            src="/images/common/under-curve-footer.svg"
+            alt="circle"
+        />
+    </div>
+
+</Container>
+
+<style>
+
+</style>
