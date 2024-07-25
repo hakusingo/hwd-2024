@@ -1,9 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import hero from '/src/images/top/hero.jpg';
+
+const { header } = Astro.props;
 ---
 
-<header class="h-[100vh] relative max-h-[640px]">
+<header class=`h-[100vh] relative max-h-[640px] lg:hidden ${header}`>
     <Image
         src={hero}
         alt="沖縄の夕日が綺麗なビーチ"

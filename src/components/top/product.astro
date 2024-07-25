@@ -2,29 +2,52 @@
 import Container from '../container.astro';
 import { Image } from "astro:assets";
 import Ttl from '../util/ttl.astro';
+import product01 from "/src/images/top/product-01.jpg";
+import product02 from "/src/images/top/product-02.jpg";
+import product03 from "/src/images/top/product-03.jpg";
+import product04 from "/src/images/top/product-04.jpg";
+import ai01 from "/src/images/top/ai_01.png";
+import ai02 from "/src/images/top/ai_02.png";
+import ai03 from "/src/images/top/ai_03.png";
+import ai04 from "/src/images/top/ai_04.png";
+import ai05 from "/src/images/top/ai_05.png";
+import ai06 from "/src/images/top/ai_06.png";
+import ai07 from "/src/images/top/ai_07.png";
+import ai08 from "/src/images/top/ai_08.png";
+
+const aiPic = [
+    ai01,
+    ai02,
+    ai03,
+    ai04,
+    ai05,
+    ai06,
+    ai07,
+    ai08
+]
 
 const services = [
     {
         title: `ワンオーシャン様\n公式ウェブサイト`,
-        image: "/src/images/top/product-01.jpg",
+        image: product01,
         alt: "ワンオーシャン様 ウェブサイト",
         description: "アドベンチャーツアーを行っているOneOcean様のウェブサイトを作成。大人から子供まで楽しめる元気な感じのブルーをテーマカラーに作成しました。"
     },
     {
         title: "ヤマシロ鍼灸整骨院様\n公式ウェブサイト",
-        image: "/src/images/top/product-02.jpg",
+        image: product02,
         alt: "ヤマシロ鍼灸整骨院様 ウェブサイト",
         description: "親しみやすく使いやすいデザイン、SEOを意識した治療や施術に関する豊富な記事を作成し、お客様に安心してご覧いただけるサイトに仕上げました。"
     },
     {
         title: "宮城カズトシ様\n二つ折りパフレット",
-        image: "/src/images/top/product-03.jpg",
+        image: product03,
         alt: "アプリ/システム構築",
         description: "一目見て宮城様とわかるような、カラー構成と読みやすく飽きの来ないようにイラストや写真を使用しました。宮城様の活動とうるま市への想いが読者に届くように作成しました。"
     },
     {
         title: "AIコンテンツ制作",
-        image: "/src/images/top/product-04.jpg",
+        image: product04,
         alt: "AIコンテンツ制作",
         description: "AI技術を活用して文章やイラストを作成いたします。生成AIを使ったコンテンツ制作から、その活用方法のアドバイスまで幅広くサポートします。このサイトでは、AIを活用して構成から文章作成、画像の生成まで行っているAIブログです。",
         linkText: "AIブログへ",
@@ -35,7 +58,7 @@ const services = [
 
 <Container cls="bg-pink pb-[120px]">
     <Ttl ttl="制作事例" mt="pt-[100px]" />
-    <div class="flex flex-col gap-y-[32px] relative pb-[240px]">
+    <div id="product" class="mt-[-200px] pt-[200px] flex flex-col gap-y-[40px] relative pb-[240px]">
         {services.map((service) => (
             <div>
                 <h3 class="text-[22px] font-[700] inline-block pr-[.5em] mb-[12px]">{service.title}</h3>
@@ -54,6 +77,26 @@ const services = [
                 )}
             </div>
         ))}
+        <div class="">
+            <h3 class="text-[22px] font-[700] inline-block pr-[.5em] mb-[12px]">AIアート作成</h3>
+            <div class="splide" aria-label="Splide">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        {aiPic.map((pic) => (
+                            <div class="splide__slide">
+                                <Image
+                                    class="px-[24px] mb-[16px] aspect-[1/1] object-cover"
+                                    src={pic}
+                                    alt="ai生成画像"
+                                    width={684}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            <p class="px-[32px] tracking-[0.1em]">AI技術を駆使した生成アートで、あなたの想像を超える美しい作品を生み出すお手伝いをします。プロンプトやモデルの活用方法を丁寧にガイドし、実写風の画像から独創的なイラストまで、あなたの望むイメージを具現化します。創作の過程を通じて、AIアートの魅力と可能性を体験してみませんか？一緒に、新しいアートの世界を切り拓きましょう。</p>
+        </div>
         <img
             class="absolute top-[-200px] left-[-100px] z-[20]"
             src="/images/common/circle-top.svg"
@@ -95,5 +138,4 @@ const services = [
         padding-left: 2.4em;
         line-height: 1.6;
     }
-
 </style>

@@ -1,0 +1,90 @@
+---
+import Container from '../container.astro';
+import Ttl from '../util/ttl.astro';
+
+
+---
+
+<Container >
+    <Ttl ttl="コンタクト" mt="mt-[80px] mb-[40px]" />
+
+
+    <div class="max-w-[400px] px-[24px] mx-auto leading-[1.6] tracking-[0.05em] pb-[400px]">
+        <div class="mb-[40px]">
+            <p class="mb-[1em]">ご質問やご相談は、グーグルフォームからお気軽にお問い合わせください。</p>
+        </div>
+        <!-- Process Steps -->
+        <div>
+            <h3 class="font-m text-center text-[18px] font-[700] mb-[24px]">ご利用の流れ</h3>
+            <div class="flex flex-col mb-[48px] gap-y-[32px]">
+                <!-- Step 1 -->
+                <div class="flex">
+                    <div>
+                        <span>1.</span>
+                    </div>
+                    <div>
+                        <h4>フォームの入力</h4>
+                        <p>フォームに必要な情報をご入力ください。詳細なお問い合わせ内容やご希望の連絡方法を明記していただくと、スムーズな対応が可能です。</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex">
+                    <div>
+                        <span>2.</span>
+                    </div>
+                    <div>
+                        <h4>送信</h4>
+                        <p>フォーム入力が完了したら、「送信」ボタンをクリックしてください。送信完了後、確認メッセージが表示されます。</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex">
+                    <div>
+                        <span>3.</span>
+                    </div>
+                    <div>
+                        <h4>確認と対応</h4>
+                        <p>お問い合わせ内容を確認後、担当者よりご連絡いたします。通常、1〜2営業日以内にご返信いたします。</p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://forms.gle/GLG9RKDhiDNEM75e6" class="bg-yellow-200 block mt-[24px] p-[4px] text-center border-[4px] border-[black] max-w-[300px] mx-auto font-[700]" target="_blank" rel="noopener">
+                グーグルフォームへ
+            </a>
+        </div>
+        <img
+            class="absolute top-[-600px] left-[-100px] z-[20]"
+            src="/images/common/circle-top.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute top-[10%] right-[-100px] z-[-1]"
+            src="/images/common/circle-mid.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute bottom-[30%] left-[-72px] z-[-1]"
+            src="/images/common/circle-bottom.svg"
+            alt="circle"
+        />
+        <img
+            class="absolute target bottom-[120px] w-[180px] z-30 right-[0]"
+            src="/images/top/faru.png"
+            alt="ファルコさん"
+            width="140"
+        />
+        <img
+            class="underCircle absolute z-[20] bottom-0 right-[0px] left-[0px] max-w-[unset] w-full"
+            src="/images/common/under-curve-footer.svg"
+            alt="circle"
+        />
+    </div>
+
+</Container>
+
+<style>
+    h4 {
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+</style>

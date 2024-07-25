@@ -1,0 +1,115 @@
+---
+import Container from '../container.astro';
+import Ttl from '../util/ttl.astro';
+import { faqs } from './dataQa.js';
+
+const groupedFaqs = faqs.reduce((acc, faq) => {
+    acc[faq.category] = acc[faq.category] || [];
+    acc[faq.category].push(faq);
+    return acc;
+}, {});
+---
+
+<Container >
+    <Ttl ttl="よくある質問" mt="mt-[80px] mb-[48px]" />
+    <div class="pb-[260px] flex flex-col gap-y-[32px] relative text-[black]">
+            {Object.keys(groupedFaqs).map((category, index) => (
+              <div key={index} class="mb-8 tracking-[0.05em]">
+                <div class="border-b-[4px] pb-[14px] target mb-[32px] fade-in-right">
+                  <h3 class="pl-[1em] border-l-[4px] border-[black] text-[22px] font-[700]">{category}</h3>
+                </div>
+                <div class="max-w-lg mx-auto font-m">
+                  {groupedFaqs[category].map((faq, faqIndex) => (
+                    <div class="accordion border-b border-gray-300 mb-4" key={faqIndex}>
+                      <button
+                        class="accordion-header flex justify-between items-center w-full py-4 pb-[24px] px-5 text-left text-gray-700 font-medium focus:outline-none"
+                        onClick={(event) => {
+                          const header = event.currentTarget;
+                          const content = header.nextElementSibling;
+                          const isOpen = !content.classList.contains('hidden');
+
+                          if (isOpen) {
+                            content.classList.add('hidden');
+                            header.querySelector('.icon-minus').classList.add('hidden');
+                            header.querySelector('.icon-plus').classList.remove('hidden');
+                          } else {
+                            content.classList.remove('hidden');
+                            header.querySelector('.icon-minus').classList.remove('hidden');
+                            header.querySelector('.icon-plus').classList.add('hidden');
+                          }
+                        }}
+                      >
+                        <span class="q-text pr-[12px] font-[700] underline">Q {faq.question}</span>
+                        <span class="icon-wrapper">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-plus">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-minus hidden">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="accordion-content hidden px-5 pb-4">
+                        <p class="text-gray-600">A {faq.answer}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+              <img
+                  class="absolute top-[100px] left-[-120px] z-[-10]"
+                  src="/images/common/circle-top.svg"
+                  alt="circle"
+              />
+               <img
+                   class="absolute top-[20%] right-[-140px] z-[-10]"
+                   src="/images/common/circle-mid.svg"
+                   alt="circle"
+               />
+               <img
+                   class="absolute bottom-[30%] left-[-72px] z-[-10]"
+                   src="/images/common/circle-bottom.svg"
+                   alt="circle"
+               />
+               <img
+               class="absolute target bottom-[80px] w-[180px] z-30 right-[0]"
+               src="/images/top/riba.png"
+               alt="ファルコさん"
+               width="140"
+           />
+          <img
+          class="underCircle absolute z-[20] bottom-0 right-[-24px] left-[-24px] w-[100vw] max-w-[500px]"
+          src="/images/common/under-curve-footer.svg"
+          alt="circle"
+      />
+    </div>
+  </Container>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const accordions = document.querySelectorAll('.accordion');
+  
+      accordions.forEach(accordion => {
+        const header = accordion.querySelector('.accordion-header');
+        const content = accordion.querySelector('.accordion-content');
+        const iconPlus = header.querySelector('.icon-plus');
+        const iconMinus = header.querySelector('.icon-minus');
+  
+        header.addEventListener('click', () => {
+          const isOpen = !content.classList.contains('hidden');
+  
+          if (isOpen) {
+            content.classList.add('hidden');
+            iconMinus.classList.add('hidden');
+            iconPlus.classList.remove('hidden');
+          } else {
+            content.classList.remove('hidden');
+            iconMinus.classList.remove('hidden');
+            iconPlus.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>

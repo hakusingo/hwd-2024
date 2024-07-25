@@ -72,6 +72,7 @@
 		font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
 			sans-serif;
 		-webkit-text-size-adjust: none;
+		color: #1c1c1c;
 	}
 
 	.font-m {
@@ -86,7 +87,6 @@
 	}
 
 	/* インターセクションオブザーバー */
-
 	.target {
 		opacity: 0;
 		transition: opacity 1s ease-out, transform 1s ease-out;
@@ -122,5 +122,13 @@
 	/* その場でふわっと表示 */
 	.target:not(.fade-in-right):not(.fade-in-left):not(.fade-in-bottom).visible {
 		opacity: 1;
+	}
+
+	/* スプライドページネーション */
+	.splide__pagination.splide__pagination--ltr {
+        bottom: 30px !important;
+    }
+	.splide__pagination__page.is-active{
+		background-color: rgb(255 241 0) !important;
 	}
 }

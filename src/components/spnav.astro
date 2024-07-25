@@ -13,8 +13,16 @@ const navMenu = [
         url: "/#product"
     },
     {
-        menu: "PROFILE",
-        url: "/#profile"
+        menu: "PRICING",
+        url: "/pricing"
+    },
+    {
+        menu: "Q&A",
+        url: "/qa"
+    },
+    {
+        menu: "CONTACT",
+        url: "/contact"
     },
 ]
 ---
@@ -22,11 +30,10 @@ const navMenu = [
     <ul class="flex flex-col justify-center items-center h-full w-full gap-y-[24px] mt-[-48px]">
         {navMenu.map(item => (
             <li class="">
-                <a class="block text-[24px] font-m font-[700] tracking-[0.05em]" href={item.url}>{item.menu}</a>
+                <a class="SpNavAnc block text-[24px] font-m font-[700] tracking-[0.05em]" href={item.url}>{item.menu}</a>
             </li>
         ))}
     </ul>
-    <a class="block text-[24px] font-m font-[700] tracking-[0.05em]" href="google">アイテムだよ</a>
     <img
         class="absolute top-[120px] z-30 right-[24px] w-[120px]"
         src="/images/top/dori.png"
