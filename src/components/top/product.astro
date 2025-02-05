@@ -1,11 +1,16 @@
 ---
-import Container from '../container.astro';
+import Container from "../container.astro";
 import { Image } from "astro:assets";
-import Ttl from '../util/ttl.astro';
+import Ttl from "../util/ttl.astro";
 import product01 from "/src/images/top/product-01.jpg";
 import product02 from "/src/images/top/product-02.jpg";
 import product03 from "/src/images/top/product-03.jpg";
 import product04 from "/src/images/top/product-04.jpg";
+import product05 from "/src/images/top/product-05.jpg";
+import product06 from "/src/images/top/product-06.jpg";
+import product07 from "/src/images/top/product-07.jpg";
+import product08 from "/src/images/top/product-08.jpg";
+import product09 from "/src/images/top/product-09.jpg";
 import ai01 from "/src/images/top/ai_01.png";
 import ai02 from "/src/images/top/ai_02.png";
 import ai03 from "/src/images/top/ai_03.png";
@@ -15,129 +20,210 @@ import ai06 from "/src/images/top/ai_06.png";
 import ai07 from "/src/images/top/ai_07.png";
 import ai08 from "/src/images/top/ai_08.png";
 
-const aiPic = [
-    ai01,
-    ai02,
-    ai03,
-    ai04,
-    ai05,
-    ai06,
-    ai07,
-    ai08
-]
+const aiPic = [ai01, ai02, ai03, ai04, ai05, ai06, ai07, ai08];
 
 const services = [
-    {
-        title: `ワンオーシャン様\n公式ウェブサイト`,
-        image: product01,
-        alt: "ワンオーシャン様 ウェブサイト",
-        description: "アドベンチャーツアーを行っているOneOcean様のウェブサイトを作成。大人から子供まで楽しめる元気な感じのブルーをテーマカラーに作成しました。"
-    },
-    {
-        title: "ヤマシロ鍼灸整骨院様\n公式ウェブサイト",
-        image: product02,
-        alt: "ヤマシロ鍼灸整骨院様 ウェブサイト",
-        description: "親しみやすく使いやすいデザイン、SEOを意識した治療や施術に関する豊富な記事を作成し、お客様に安心してご覧いただけるサイトに仕上げました。"
-    },
-    {
-        title: "宮城カズトシ様\n二つ折りパフレット",
-        image: product03,
-        alt: "アプリ/システム構築",
-        description: "一目見て宮城様とわかるような、カラー構成と読みやすく飽きの来ないようにイラストや写真を使用しました。宮城様の活動とうるま市への想いが読者に届くように作成しました。"
-    },
-    {
-        title: "AIコンテンツ制作",
-        image: product04,
-        alt: "AIコンテンツ制作",
-        description: "AI技術を活用して文章やイラストを作成いたします。生成AIを使ったコンテンツ制作から、その活用方法のアドバイスまで幅広くサポートします。このサイトでは、AIを活用して構成から文章作成、画像の生成まで行っているAIブログです。",
-        linkText: "AIブログへ",
-        url: "https://aiblog.haku-design.net/"
-    }
+  {
+    title: `久夫美術館\n公式ウェブサイト`,
+    image: product05,
+    alt: "久夫美術館 ウェブサイト",
+    description:
+      "八重瀬町にある施設美術館「久夫美術館」のウェブサイトを制作しました。美術館の雰囲気がわかるように動画も制作。絵画の紹介のためスワイプできる画像ギャラリーも追加し、作品を閲覧しやすいように作成しました。",
+    linkText: "ウェブサイトへ",
+    url: "https://hisaobijutsukan.com/",
+  },
+  {
+    title: `LAYDAY BEER\n公式ウェブサイト`,
+    image: product06,
+    alt: "久夫美術館 ウェブサイト",
+    description:
+      "うるま市石川にある醸造所のLAYDAY BEERのウェブサイトを制作しました。古民家を改装したオシャレな醸造所の写真や、飲みたくなるようなビールの写真や記事を入れて作成しました。よくある質問ページも作成し、ユーザーの知りたい情報も事前に掲載しています。",
+    linkText: "ウェブサイトへ",
+    url: "https://laydaybeer.com/",
+  },
+  {
+    title: `名刺センター\n公式ウェブサイト`,
+    image: product09,
+    alt: "名刺センター",
+    description:
+      "サイトリニューアル。明るく元気なデザインで、見やすくシンプルに構築。WordPressの機能を活用し、お客様ご自身で各ページ簡単に更新・修正が可能にしました。セキュリティ面にも配慮し、安全性を確保ログインURLなどにも機密性を担保しております。",
+    linkText: "ウェブサイトへ",
+    url: "https://laugh-d.design/",
+  },
+  {
+    title: `ワンオーシャン様\n公式ウェブサイト`,
+    image: product01,
+    alt: "ワンオーシャン様 ウェブサイト",
+    description:
+      "アドベンチャーツアーを行っているOneOcean様のウェブサイトを作成。大人から子供まで楽しめる元気な感じのブルーをテーマカラーに作成しました。",
+  },
+  {
+    title: "ヤマシロ鍼灸整骨院様\n公式ウェブサイト",
+    image: product02,
+    alt: "ヤマシロ鍼灸整骨院様 ウェブサイト",
+    description:
+      "親しみやすく使いやすいデザイン、SEOを意識した治療や施術に関する豊富な記事も作成しました、鍼灸整骨院らしくお客様に安心してご覧いただけるサイトに仕上げました。",
+    linkText: "ウェブサイトへ",
+    url: "https://yamashiro-seikotuin.okinawa/",
+  },
+  {
+    title: "宮城カズトシ様\n選挙トータルサポート",
+    image: product03,
+    alt: "選挙トータルサポート",
+    description:
+      "目立つテーマカラーに沿った、二つ折りパンフレットや名刺、名刺サイズの二つ折りカードも同時に作成。SNS運用や動画作成、名簿管理の集計表も複数同時進行で作業できる環境を作成し、トータルでサポートさせていただきました。",
+  },
+  {
+    title: "「麺恋食堂/麺屋 金二郎様\nロゴ・チラシ・メニュー",
+    image: product08,
+    alt: "麺恋食堂/麺屋 金二郎様 ロゴ・チラシ・メニュー",
+    description:
+      "飲食店様のロゴ・チラシ・メニューを作成しました。店舗様の好みや、客層に合わせたロゴやメニュー作りを心がけています",
+  },
+  {
+    title: "AIコンテンツ制作",
+    image: product04,
+    alt: "AIコンテンツ制作",
+    description:
+      "AI技術を活用して文章やイラストを作成いたします。生成AIを使ったコンテンツ制作から、その活用方法のアドバイスまで幅広くサポートします。以下のURLのサイトでは、AIを活用して構成から文章作成、画像の生成まで行っているAI制作のブログです。",
+    linkText: "AIブログへ",
+    url: "https://aiblog.haku-design.net/",
+  },
 ];
 ---
 
 <Container cls="bg-pink pb-[120px]">
-    <Ttl ttl="制作事例" mt="pt-[100px]" />
-    <div id="product" class="mt-[-200px] pt-[200px] flex flex-col gap-y-[40px] relative pb-[180px]">
-        {services.map((service) => (
-            <div class="target max-w-[380px] mx-auto">
-                <h3 class="font-m text-[22px] font-[700] inline-block pr-[.5em] mb-[8px]">{service.title}</h3>
-                <Image
-                    class="px-[24px] mb-[16px]"
-                    src={service.image}
-                    alt={service.alt}
-                    width={824}
-                    height={463}
-                />
-                <p class="px-[32px] tracking-[0.1em]">{service.description}</p>
-                {service.linkText && service.url && (
-                    <a href={service.url} class="block mt-[24px] bg-white p-[4px] text-center border-[4px] border-[black] max-w-[300px] mx-auto" target="_blank" rel="noopener">
-                        {service.linkText}
-                    </a>
-                )}
-            </div>
-        ))}
-        <div class="max-w-[380px] mx-auto">
-            <h3 class="text-[22px] font-[700] inline-block pr-[.5em] mb-[12px]">AIアート作成</h3>
-            <div class="splide" aria-label="Splide">
-                <div class="splide__track">
-                    <div class="splide__list">
-                        {aiPic.map((pic) => (
-                            <div class="splide__slide">
-                                <Image
-                                    class="px-[24px] mb-[16px] aspect-[1/1] object-cover"
-                                    src={pic}
-                                    alt="ai生成画像"
-                                    width={684}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-            <p class="px-[32px] tracking-[0.1em]">AI技術を駆使した生成アートで、あなたの想像を超える美しい作品を生み出すお手伝いをします。</p>
-            <p class="px-[32px] tracking-[0.1em]">プロンプトやモデルの活用方法を丁寧にガイドし、実写風の画像から独創的なイラストまで、あなたの望むイメージを具現化します。</p>
-            <p class="px-[32px] tracking-[0.1em]">創作の過程を通じて、AIアートの魅力と可能性を体験してみませんか？一緒に、新しいアートの世界を切り拓きましょう。</p>
+  <Ttl ttl="制作事例" mt="pt-[100px]" />
+  <div
+    id="product"
+    class="mt-[-200px] pt-[200px] flex flex-col gap-y-[40px] relative pb-[180px]"
+  >
+    {
+      services.map((service) => (
+        <div class="target max-w-[380px] mx-auto">
+          <h3 class="font-m text-[22px] font-[700] inline-block pr-[.5em] mb-[8px]">
+            {service.title}
+          </h3>
+          <Image
+            class="px-[24px] mb-[16px]"
+            src={service.image}
+            alt={service.alt}
+            width={824}
+            height={463}
+          />
+          <p class="px-[32px] tracking-[0.1em]">{service.description}</p>
+          {service.linkText && service.url && (
+            <a
+              href={service.url}
+              class="block mt-[24px] bg-white p-[4px] text-center border-[4px] border-[black] max-w-[300px] mx-auto"
+              target="_blank"
+              rel="noopener"
+            >
+              {service.linkText}
+            </a>
+          )}
         </div>
-        <img
-            class="absolute top-[-200px] left-[-100px] z-[20]"
-            src="/images/common/circle-top.svg"
-            alt="circle"
-        />
-        <img
-            class="absolute top-[40%] right-[-100px] z-[-1]"
-            src="/images/common/circle-mid.svg"
-            alt="circle"
-        />
-        <img
-            class="absolute bottom-[30%] left-[-72px] z-[-1]"
-            src="/images/common/circle-bottom.svg"
-            alt="circle"
-        />
-        <img
-            class="absolute target fade-in-bottom-right bottom-[-100px] w-[160px] z-30 right-[50px]"
-            src="/images/top/dan.png"
-            alt="ダンクメン"
-            width="140"
-        />
-        <img
-            class="absolute z-[20] bottom-[-144px] right-[-24px] left-[-24px] w-[100vw] max-w-[500px]"
-            src="/images/common/under-curve.svg"
-            alt="circle"
-        />
+      ))
+    }
+    <div class="max-w-[380px] mx-auto w-full">
+      <h3
+        class="text-[22px] font-[700] inline-block pr-[.5em] mb-[12px] !pl-[0px]"
+      >
+        生成AI活用レッスン
+      </h3>
+      <div class="splide" aria-label="Splide">
+        <div class="splide__track">
+          <div class="splide__list">
+            {
+              aiPic.map((pic) => (
+                <div class="splide__slide">
+                  <Image
+                    class="px-[24px] mb-[16px] aspect-[1/1] object-cover"
+                    src={pic}
+                    alt="ai生成画像"
+                    width={684}
+                  />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+      <p class="px-[32px] tracking-[0.1em]">
+        AI技術を駆使した生成アートで、あなたの想像を超える美しい作品を生み出すお手伝いをします。
+      </p>
+      <p class="px-[32px] tracking-[0.1em]">
+        実写風の画像から独創的なイラストまで、あなたの望むイメージを具現化します。
+      </p>
     </div>
+    <div class="max-w-[380px] mx-auto w-full">
+      <h3
+        class="text-[22px] font-[700] inline-block pr-[.5em] mb-[12px] !pl-[0px]"
+      >
+        ショート動画作成
+      </h3>
+      <iframe
+        class="max-w-[100%] h-auto aspect-video mb-[16px]"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/7tUPibCFEQc?si=OC3AA0eDlzBaKJQf?&mute=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+      <p class="px-[32px] tracking-[0.1em]">
+        SNSやウェブサイトで大活躍するショート動画を作成。
+      </p>
+      <p class="px-[32px] tracking-[0.1em]">
+        文章ではなかなか伝わらない情報を、動画を利用してユーザーに発信します。
+      </p>
+      <p class="px-[32px] tracking-[0.1em]">
+        スマホ用の縦長のシュート動画の作成も承ります。
+      </p>
+      <p class="px-[32px] tracking-[0.1em]">
+        「久夫美術館」様の動画を作成させていただきました。
+      </p>
+    </div>
+    <img
+      class="absolute top-[-200px] left-[-100px] z-[20]"
+      src="/images/common/circle-top.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute top-[40%] right-[-100px] z-[-1]"
+      src="/images/common/circle-mid.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute bottom-[30%] left-[-72px] z-[-1]"
+      src="/images/common/circle-bottom.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute target fade-in-bottom-right bottom-[-100px] w-[160px] z-30 right-[50px]"
+      src="/images/top/dan.png"
+      alt="ダンクメン"
+      width="140"
+    />
+    <img
+      class="absolute z-[20] bottom-[-144px] right-[-24px] left-[-24px] w-[100vw] max-w-[500px]"
+      src="/images/common/under-curve.svg"
+      alt="circle"
+    />
+  </div>
 </Container>
 
 <style>
-    h3 {
-        text-decoration: underline;
-        text-decoration-thickness: 3px;
-        text-decoration-color: #1c1c1d;
-        text-underline-offset: 4px;
-        text-decoration-skip-ink: none;
-        white-space: pre-wrap;
-        text-indent: -2.4em;
-        padding-left: 2.4em;
-        line-height: 1.6;
-    }
+  h3 {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #1c1c1d;
+    text-underline-offset: 4px;
+    text-decoration-skip-ink: none;
+    white-space: pre-wrap;
+    text-indent: -2.4em;
+    padding-left: 2.4em;
+    line-height: 1.6;
+  }
 </style>

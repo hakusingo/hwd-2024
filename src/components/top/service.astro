@@ -6,19 +6,20 @@ import product01 from "/src/images/top/service_01.png";
 import product02 from "/src/images/top/service_02.png";
 import product03 from "/src/images/top/service_03.png";
 import product04 from "/src/images/top/service_04.png";
+import product05 from "/src/images/top/service_05.png";
 
 const services = [
     {
         title: "ホームページ制作",
         image: product01,
         alt: "ホームページ制作",
-        description: "お客様のニーズに合わせた魅力的で使いやすいホームページを制作いたします。最新の技術とデザインを駆使して、ビジネスのオンラインプレゼンスを強化します。"
+        description: "お客様の職種や目的、ご予算などのニーズに合わせ、魅力的で使いやすいホームページを制作いたします。SEOやMEO対策を施し、アナリティクスの導入と定期的なレポート提出も可能です。サイト管理等も含め、トータルサポートを提供いたします。"
     },
     {
         title: "DTP(名刺・チラシ等)",
         image: product02,
         alt: "DTP(名刺・チラシ等)",
-        description: "お客様のニーズに合わせた魅力的で使いやすいホームページを制作いたします。最新の技術とデザインを駆使して、ビジネスのオンラインプレゼンスを強化します。"
+        description: "名刺やチラシなど、お客様のブランドイメージに合わせた印刷物をデザインいたします。目的やご予算に応じて、効果的で視覚的に魅力的なデザインをご提案。印刷手配も含め、スムーズなプロセスでお届けします。"
     },
     {
         title: "アプリ/システム構築",
@@ -30,7 +31,13 @@ const services = [
         title: "AIコンテンツ制作",
         image: product04,
         alt: "AIコンテンツ制作",
-        description: "AI技術を活用して文章やイラストを作成いたします。生成AIを使ったコンテンツ制作から、その活用方法のアドバイスまで幅広くサポートします。"
+        description: "AI技術を活用して文章やイラストを作成いたします。生成AIを使ったコンテンツ制作から、その活用方法のアドバイスまで幅広くサポートします。このセクションの画像も生成AIで作成しています。"
+    },
+    {
+        title: "動画制作",
+        image: product05,
+        alt: "動画制作画像",
+        description: "SNSやウェブサイトに最適なショート動画を制作いたします。短い時間で効果的に伝わるよう、お客様のブランドやメッセージに合わせた映像をデザイン。ナレーションや字幕、BGMの追加も可能で、視覚的なインパクトを強めます。"
     }
 ];
 ---
@@ -38,12 +45,14 @@ const services = [
 <Container >
     <div class="relative" id="service">
         <h3 class="about target pt-[80px] relative font-m font-[700] text-[24px] text-center mb-[24px]">“ハクウェブデザインって？“</h3>
-        <p class="text-center flex flex-col gap-y-[4px]">
-            <span class="inline-block">“ハクウェブデザイン“は</span>
-            <span class="inline-block">沖縄県うるま市近辺で</span>
-            <span class="inline-block">ウェブサイト関連、各種印刷物</span>
-            <span class="inline-block">AIコンテンツ作成、生成AIの指導</span>
-            <span class="inline-block">SNS運用などをしています。</span>
+        <p class="text-center flex flex-col gap-y-[4px] relative z-20">
+            <span class="inline-block">「ハクウェブデザイン」は</span>
+            <span class="inline-block">沖縄県うるま市を拠点に、</span>
+            <span class="inline-block">ウェブサイトの制作や管理、</span>
+            <span class="inline-block">名刺やチラシなどの印刷物デザイン、</span>
+            <span class="inline-block">SNS運用代行、ショート動画制作、</span>
+            <span class="inline-block">AIコンテンツ作成サポートを</span>
+            <span class="inline-block">提供しているウェブ屋さんです。</span>
         </p>
         <img
             src="/images/top/faru.png"

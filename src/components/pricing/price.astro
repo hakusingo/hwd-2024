@@ -1,6 +1,6 @@
 ---
-import Container from '../container.astro';
-import Ttl from '../util/ttl.astro';
+import Container from "../container.astro";
+import Ttl from "../util/ttl.astro";
 import { Image } from "astro:assets";
 import product01 from "/src/images/top/service_01.png";
 import product02 from "/src/images/top/service_02.png";
@@ -18,183 +18,329 @@ import ai08 from "/src/images/top/ai_08.png";
 
 import aiBlog from "/src/images/top/product-04.jpg";
 
-const aiPic = [
-    ai01,
-    ai02,
-    ai03,
-    ai04,
-    ai05,
-    ai06,
-    ai07,
-    ai08
-]
+const aiPic = [ai01, ai02, ai03, ai04, ai05, ai06, ai07, ai08];
 ---
 
-<Container >
-    <Ttl ttl="料金プラン" mt="mt-[80px] mb-[40px]" />
-    <div class="max-w-[380px] mx-auto">
-        <div class="flex flex-col gap-y-[32px] relative pb-[48px]">
-            <div>
-                <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">ホームページ製作</h3>
-                <p class="text-right tracking-[0.05em] text-[18px] font-m mb-[4px]">¥100,000~</p>
-                <Image class="target px-[24px] mb-[16px]" src={product01} alt="ホームページ制作" />
-                <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px]">
-                    <span class="">ホームページ制作は 100,000円 より承っております。お客様のビジネスやニーズに最適なデザインを提供いたします。詳細な料金は、ご希望の機能やデザインの複雑さによって変わりますので、お気軽にお問い合わせください。</span>
-                    <span class="">また、独自ドメインを必要としない場合や、1ページの簡単なサイトの場合は、 100,000円以下 での制作も可能です。具体的な内容についてはご相談ください。</span>
-                    <span class="">ドメインやサーバー代などの料金は、お客様のご要望に応じてカスタマイズいたします。最適なプランを提案し、コストを抑えながら高品質なサービスを提供します。</span>
-                </p>
+<Container>
+  <Ttl ttl="料金プラン" mt="mt-[80px] mb-[40px]" />
+  <div class="max-w-[380px] mx-auto">
+    <div class="flex flex-col gap-y-[32px] relative pb-[48px]">
+      <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px]">
+        <span class=""
+          >ハクウェブデザインでは、お客様それぞれのニーズに合わせたお見積りをお作りいたします。</span
+        >
+        <span class=""
+          >ウェブ制作やデザインに関するご相談は、どうぞお気軽にお問い合わせください。</span
+        >
+        <span class=""
+          >また、下記プランに含まれていないご要望についても柔軟に対応いたしますので、お気軽にご相談ください。</span
+        >
+        <span class="text-[14px]">＊以下の料金は税抜き価格です。</span>
+      </p>
+      <div>
+        <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">
+          ホームページ製作
+        </h3>
+        <p class="text-right tracking-[0.05em] text-[18px] font-m mb-[4px]">
+          ¥50,000~
+        </p>
+        <Image
+          class="target px-[24px] mb-[16px]"
+          src={product01}
+          alt="ホームページ制作"
+        />
+        <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px]">
+          <div class="mb-[16px]">
+            <div class="flex justify-between text-[18px] mb-[8px]">
+              <span class="font-[700]"> • エントリープラン</span>
+              <span>¥50,000</span>
             </div>
-            <img
-                class="absolute top-[10%] right-[-100px] z-[-1]"
-                src="/images/common/circle-mid.svg"
-                alt="circle"
-            />
-            <img
-                class="absolute bottom-[30%] left-[-72px] z-[-1]"
-                src="/images/common/circle-bottom.svg"
-                alt="circle"
-            />
-        </div>
-        <div class="flex flex-col gap-y-[32px] relative pb-[48px]">
-            <div>
-                <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">DTP<span class="text-[18px] ml-[8px]">(名刺・チラシ等)</span></h3>
-                <Image class="target px-[24px] mb-[16px]" src={product02} alt="ホームページ制作" />
-                <h4 class="my-[12px] text-[18px] font-[700] tracking-[0.1em]">名刺製作</h4>
-                <p class="text-right tracking-[0.05em] text-[18px] font-m mb-[4px]">¥10,000~</p>
-                <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px]">
-                    <span class="">オリジナルデザインの名刺制作。お客様のブランドイメージに合わせたデザインを提供いたします。既存の名刺を増刷することも可能です。名刺の印刷代は別途かかります。</span>
-                </p>
-                <h4 class="my-[12px] mt-[24px] text-[18px] font-[700] tracking-[0.1em]">チラシ・フライヤー製作</h4>
-                <p class="text-right tracking-[0.05em] text-[18px] font-m mb-[4px]">¥30,000~</p>
-                <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px]">
-                    <span class="">効果的なマーケティングをサポートするチラシやフライヤーのデザイン。単ページや両面のデザインに対応可能です。印刷代は別途かかります。</span>
-                </p>
-                <p class="px-[16px] mt-[32px] tracking-[0.1em] flex flex-col gap-y-[24px]">
-                    <span class="">すべてのDTPサービスは、デザインの複雑さや内容に応じて料金が変動する場合があります。詳細な料金やご希望のデザインについては、お気軽にお問い合わせください。最適なプランを提案し、コストを抑えながら高品質なサービスを提供します。</span>
-                </p>
+            シンプルな1ページサイトをお作りするプランです。小規模ビジネスやランディングページにおすすめの、手軽に始められるホームページです。
+          </div>
+          <div class="mb-[16px]">
+            <div class="flex justify-between text-[18px] mb-[8px]">
+              <span class="font-[700]"> • ベーシックプラン</span>
+              <span>¥100,000</span>
             </div>
-            <img
-                class="absolute top-[10%] right-[-100px] z-[-1]"
-                src="/images/common/circle-mid.svg"
-                alt="circle"
-            />
-            <img
-                class="absolute bottom-[30%] left-[-72px] z-[-1]"
-                src="/images/common/circle-bottom.svg"
-                alt="circle"
-            />
-        </div>
-        <div class="flex flex-col gap-y-[32px] relative pb-[48px]">
-            <div>
-                <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">アプリ/システム構築</h3>
-                <p class="text-right tracking-[0.05em] text-[18px] font-m mb-[4px]">¥500,000~</p>
-                <Image class="target px-[24px] mb-[16px]" src={product03} alt="ホームページ制作" />
-                <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px]">
-                    <span class="">お客様のビジネスニーズに合わせたオリジナルアプリやカスタムシステムの開発。</span>
-                </p>
-                <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px]">
-                    <span class="">または業務効率化やデータ管理を支援するシステム開発に対応可能です。詳細な料金は、機能やデザインの複雑さによって変わりますので、お気軽にお問い合わせください。</span>
-                </p>
+            テンプレートデザインを使い、トップページと2つの主要ページ（会社概要やサービス紹介ページなど）で構成します。SEO対策も含まれているので、初めてのホームページにも最適です。
+          </div>
+          <div class="mb-[16px]">
+            <div class="flex justify-between text-[18px] mb-[8px]">
+              <span class="font-[700]"> • プレミアムプラン</span>
+              <span>¥150,000</span>
             </div>
-            <img
-                class="absolute top-[10%] right-[-100px] z-[-1]"
-                src="/images/common/circle-mid.svg"
-                alt="circle"
-            />
-            <img
-                class="absolute bottom-[30%] left-[-72px] z-[-1]"
-                src="/images/common/circle-bottom.svg"
-                alt="circle"
-            />
-        </div>
-        <div class="flex flex-col gap-y-[32px] relative pb-[280px]">
-            <div>
-                <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">AIコンテンツ制作</h3>
-                <Image class="target px-[24px] mb-[16px]" src={product04} alt="AI制作" />
-                <h4 class="my-[12px] text-[18px] font-[700] tracking-[0.1em]">AIコンテンツ制作</h4>
-                <p class="text-right tracking-[0.05em] text-[18px] font-m mb-[4px]">¥50,000~</p>
-                <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px] mb-[18px]">
-                    <span class="">最新の生成AI技術を活用したコンテンツ制作サービス。ブログ記事、マーケティングコピー、商品説明、ソーシャルメディア投稿など、多様なコンテンツを迅速かつ高品質に提供します。以下はAIを利用して作成しています。</span>
-                </p>
-                <div class="splide" aria-label="Splide">
-                    <div class="splide__track">
-                        <div class="splide__list">
-                            {aiPic.map((pic) => (
-                                <div class="splide__slide">
-                                    <Image
-                                        class="px-[24px] mb-[16px] aspect-[1/1] object-cover"
-                                        src={pic}
-                                        alt="ai生成画像"
-                                        width={684}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <p class="px-[16px] mt-[32px] tracking-[0.1em] flex flex-col gap-y-[24px] mb-[18px]">
-                    <span class="">またAIで文章や画像を作成している、架空のAI人物が作成しているブログを運営しています。是非ご覧ください。</span>
-                </p>
-                <Image
-                    class="px-[24px] mb-[16px] target"
-                    src={aiBlog}
-                    alt="AIブログ"
-                    width={824}
-                    height={463}
-                />
-                <a href="https://aiblog.haku-design.net/" class="block mt-[24px] bg-white p-[4px] text-center border-[4px] border-[black] max-w-[300px] mx-auto" target="_blank" rel="noopener">
-                    AIブログへ
-                </a>
-                <h4 class="my-[12px] mt-[48px] text-[18px] font-[700] tracking-[0.1em]">生成AIレッスン</h4>
-                <p class="text-right tracking-[0.05em] text-[18px] font-m mb-[4px]">¥10,000~ (１回あたり)</p>
-                <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px] mb-[18px]">
-                    <span class="">生成AIを使いこなすためのレッスンを提供。初心者から上級者まで、各レベルに対応したカスタマイズレッスンを行います。具体的なツールの使い方や効果的な活用方法を学び、実践的なスキルを身につけることができます。</span>
-                </p>
+            基本プランに加えて、お知らせやブログ機能を追加。複数ページが必要なビジネスや、定期的な情報発信が必要な方におすすめです。
+          </div>
+          <div class="mb-[16px]">
+            <div class="flex justify-between text-[18px] mb-[8px]">
+              <span class="font-[700]"> • オリジナルデザインプラン</span>
+              <span>¥300,000~</span>
             </div>
-            <img
-                class="absolute top-[10%] right-[-100px] z-[-1]"
-                src="/images/common/circle-mid.svg"
-                alt="circle"
-            />
-            <img
-                class="absolute bottom-[30%] left-[-72px] z-[-1]"
-                src="/images/common/circle-bottom.svg"
-                alt="circle"
-            />
-            <img
-                class="underCircle absolute z-[20] bottom-0 right-[-24px] left-[-24px] w-[100vw] max-w-[500px]"
-                src="/images/common/under-curve-footer.svg"
-                alt="circle"
-            />
-            <img
-                class="absolute target bottom-[60px] w-[180px] z-30 right-[0]"
-                src="/images/top/riba.png"
-                alt="リバおー"
-                width="140"
-            />
-        </div>
-
+            完全オリジナルデザインで、ブランドに合わせた唯一無二のホームページを制作します。カスタマイズや追加ページにも柔軟に対応可能です。
+          </div>
+          <div class="">
+            <div class="flex justify-between text-[18px] mb-[8px]">
+              <span class="font-[700]"> • オプション</span>
+            </div>
+            ドメインやサーバーの取得手続きをサポートや、サイトのリニューアル、バナー制作、記事代行、SEO解析などもオプションで承ります。
+          </div>
+        </p>
+      </div>
+      <img
+        class="absolute top-[10%] right-[-100px] z-[-1]"
+        src="/images/common/circle-mid.svg"
+        alt="circle"
+      />
+      <img
+        class="absolute bottom-[30%] left-[-72px] z-[-1]"
+        src="/images/common/circle-bottom.svg"
+        alt="circle"
+      />
     </div>
+    <div class="pb-[48px]">
+      <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">
+        ショート動画作成
+      </h3>
+      <p class="text-right tracking-[0.05em] text-[18px] font-m mb-[4px]">
+        ¥30,000~
+      </p>
+      <iframe
+        class="max-w-[100%] h-auto aspect-video mb-[16px]"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/7tUPibCFEQc?si=OC3AA0eDlzBaKJQf?&mute=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+      <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px]">
+        <div class="mb-[16px]">
+          <div class="flex justify-between text-[18px] mb-[8px]">
+            <span class="font-[700]"> • エントリープラン</span>
+            <span>¥30,000</span>
+          </div>
+          動画の素材を提供いただき、1分ほどの店舗様のプロモーション動画を作成いたします。また、結婚式やお祝い等の動画も編集いたします。
+        </div>
+        <div class="mb-[16px]">
+          <div class="flex justify-between text-[18px] mb-[8px]">
+            <span class="font-[700]"> • プレミアムプラン</span>
+            <span>¥80,000~</span>
+          </div>
+          ご要望の動画をイメージをお伺いし、プレミアムプランでは動画の撮影から編集まで行います。プロの機材で撮影した、素敵な動画をお届けします。
+        </div>
+        <div class="">
+          <div class="flex justify-between text-[18px] mb-[8px]">
+            <span class="font-[700]"> • オプション</span>
+          </div>
+          ナレーションの挿入やアニメーションの作成、またテンプレートの作成なども行います。お気軽にご相談ください。
+        </div>
+      </p>
+    </div>
+    <img
+      class="absolute top-[10%] right-[-100px] z-[-1]"
+      src="/images/common/circle-mid.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute bottom-[30%] left-[-72px] z-[-1]"
+      src="/images/common/circle-bottom.svg"
+      alt="circle"
+    />
+  </div>
+  <div class="flex flex-col gap-y-[32px] relative pb-[48px]">
+    <div>
+      <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">
+        DTP<span class="text-[18px] ml-[8px]">(名刺・チラシ等印刷物)</span>
+      </h3>
+      <Image
+        class="target px-[24px] mb-[16px]"
+        src={product02}
+        alt="ホームページ制作"
+      />
+      <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px]">
+        <div class="mb-[16px]">
+          <div class="flex justify-between text-[18px] mb-[8px]">
+            <span class="font-[700]"> • 名刺デザイン作成</span>
+            <span>¥5,000~</span>
+          </div>
+          シンプルなお任せ名刺から、こだわりのデザイン名刺まで対応いたします。自社サイトやLINEのQRコードの埋め込みも可能です。さらに、財布に収まる二つ折りの名刺やショップカードの制作も承ります。
+        </div>
+        <div class="mb-[16px]">
+          <div class="flex justify-between text-[18px] mb-[8px]">
+            <span class="font-[700]"> • チラシデザイン作成</span>
+            <span>¥10,000~</span>
+          </div>
+          イベント告知や商品・サービスの紹介に最適なチラシを制作いたします。お客様のブランドイメージに合わせたデザインで、伝えたいメッセージをわかりやすく表現。片面・両面デザインや、写真・イラストの活用など、ご要望に応じて柔軟に対応いたします。
+        </div>
+        <div class="">
+          <div class="flex justify-between text-[18px] mb-[8px]">
+            <span class="font-[700]"> • 印刷代</span>
+          </div>
+          名刺100枚¥928~、チラシ100枚¥582~印刷承ります。その他ポスター、登り等もご相談ください。
+        </div>
+      </p>
+    </div>
+    <img
+      class="absolute top-[10%] right-[-100px] z-[-1]"
+      src="/images/common/circle-mid.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute bottom-[30%] left-[-72px] z-[-1]"
+      src="/images/common/circle-bottom.svg"
+      alt="circle"
+    />
+  </div>
+  <div class="flex flex-col gap-y-[32px] relative pb-[48px]">
+    <div>
+      <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">
+        アプリ/システム構築
+      </h3>
+      <Image
+        class="target px-[24px] mb-[16px]"
+        src={product03}
+        alt="ホームページ制作"
+      />
+      <p class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px]">
+        <div class="mb-[16px]">
+          <div class="flex justify-between text-[18px] mb-[8px]">
+            <span class="font-[700]"> • アプリ開発</span>
+          </div>
+          業務効率化や顧客向けサービス、カスタムシステム構築など幅広い用途に対応可能です。料金はアプリの機能や用途、デザインの複雑さによって異なりますので、詳細はお気軽にお問い合わせください。ビジネスの成長を支える信頼性の高いウェブアプリを、ぜひご検討ください。
+        </div>
+        <div class="">
+          <div class="flex justify-between text-[18px] mb-[8px]">
+            <span class="font-[700]"> • 業務支援ツールの構築</span>
+          </div>
+          スプレッドシートやクラウドツールを活用し、データ管理や業務の自動化など、日々の業務効率を向上させる業務支援ツールを構築いたしますので、顧客管理や在庫管理、タスク管理など、さまざまな用途に合わせた詳細はお気軽にお問い合わせください。
+        </div>
+      </p>
+    </div>
+    <img
+      class="absolute top-[10%] right-[-100px] z-[-1]"
+      src="/images/common/circle-mid.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute bottom-[30%] left-[-72px] z-[-1]"
+      src="/images/common/circle-bottom.svg"
+      alt="circle"
+    />
+  </div>
+  <div class="flex flex-col gap-y-[32px] relative pb-[280px]">
+    <div>
+      <h3 class="h3 text-[24px] font-[700] inline-block pr-[.5em] mb-[12px]">
+        AIコンテンツ制作
+      </h3>
+      <Image class="target px-[24px] mb-[16px]" src={product04} alt="AI制作" />
+      <h4 class="my-[12px] text-[18px] font-[700] tracking-[0.1em]">
+        生成AI画像制作、生成AI記事執筆
+      </h4>
+      <p class="text-right tracking-[0.05em] text-[18px] font-m mb-[4px]"></p>
+      <p
+        class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px] mb-[18px]"
+      >
+        <span class=""
+          >最新の生成AI技術を活用したコンテンツ制作サービス。ブログ記事、マーケティングコピー、商品説明、ソーシャルメディア投稿など、多様なコンテンツを迅速かつ高品質に提供します。以下はAIを利用して作成しています。</span
+        >
+      </p>
+      <div class="splide" aria-label="Splide">
+        <div class="splide__track">
+          <div class="splide__list">
+            {
+              aiPic.map((pic) => (
+                <div class="splide__slide">
+                  <Image
+                    class="px-[24px] mb-[16px] aspect-[1/1] object-cover"
+                    src={pic}
+                    alt="ai生成画像"
+                    width={684}
+                  />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+      <p
+        class="px-[16px] mt-[32px] tracking-[0.1em] flex flex-col gap-y-[24px] mb-[18px]"
+      >
+        <span class=""
+          >またAIで文章や画像を作成している、架空のAI人物が作成しているブログを運営しています。是非ご覧ください。</span
+        >
+      </p>
+      <Image
+        class="px-[24px] mb-[16px] target"
+        src={aiBlog}
+        alt="AIブログ"
+        width={824}
+        height={463}
+      />
+      <a
+        href="https://aiblog.haku-design.net/"
+        class="block mt-[24px] bg-white p-[4px] text-center border-[4px] border-[black] max-w-[300px] mx-auto"
+        target="_blank"
+        rel="noopener"
+      >
+        AIブログへ
+      </a>
+      <h4 class="my-[12px] mt-[48px] text-[18px] font-[700] tracking-[0.1em]">
+        生成AIレッスン
+      </h4>
+      <p class="text-right tracking-[0.05em] text-[18px] font-m mb-[4px]">
+        ¥3,000~ (1時間/2時間以上)
+      </p>
+      <p
+        class="px-[16px] tracking-[0.1em] flex flex-col gap-y-[24px] mb-[18px]"
+      >
+        <span class=""
+          >生成AIを使いこなすためのレッスンを提供。画像作成や文章の作成、またAIとの英会話レッスン等もレクチャーいたします。レッスンは複数人でもOKです。ぜひお問い合わせください。</span
+        >
+      </p>
+    </div>
+    <img
+      class="absolute top-[10%] right-[-100px] z-[-1]"
+      src="/images/common/circle-mid.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute bottom-[30%] left-[-72px] z-[-1]"
+      src="/images/common/circle-bottom.svg"
+      alt="circle"
+    />
+    <img
+      class="underCircle absolute z-[20] bottom-0 right-[-24px] left-[-60px] w-[100vw] max-w-[500px]"
+      src="/images/common/under-curve-footer.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute target bottom-[60px] w-[180px] z-30 right-[0]"
+      src="/images/top/riba.png"
+      alt="リバおー"
+      width="140"
+    />
+  </div>
 </Container>
 
 <style>
-    .about::before {
-        content: "";
-        display: block;
-        position: absolute;
-        height: 10px;
-        width: 300px;
-        background-color: #B2EDFF;
-        opacity: 0.8;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: -1;
-    }
-    .h3 {
-        background: linear-gradient(transparent 70%, #B2EDFF 50%);
-    }
-    .h3::before {
-        content: "・";
-    }
+  .about::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 300px;
+    background-color: #b2edff;
+    opacity: 0.8;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  .h3 {
+    background: linear-gradient(transparent 70%, #b2edff 50%);
+  }
+  .h3::before {
+    content: "・";
+  }
 </style>

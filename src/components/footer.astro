@@ -7,6 +7,14 @@ const services = [
         url: "/",
     },
     {
+        ttl: "料金プラン",
+        url: "/pricing",
+    },
+    {
+        ttl: "よくある質問",
+        url: "/qa",
+    },
+    {
         ttl: "プライバシーポリシー",
         url: "/policy",
     },
@@ -24,13 +32,14 @@ const services = [
 
 <Container cls="bg-[#FFA07A] pb-[40px] z-[20] pt-[40px]">
     <div class="flex flex-col gap-y-[24px] relative">
-        <ul class="flex flex-col gap-y-[12px] pb-[32px]">
+        <ul class="flex flex-col gap-y-[12px] pb-[16px]">
             {services.map((service) => (
                 <li class="flex justify-center text-white tracking-[0.05em] font-[700] font-m">
                     <a rel="prefetch" href={service.url} class="inline-block">{service.ttl}</a>
                 </li>
             ))}
         </ul>
+        <a href="tel:08039680313" class="block text-center font-[700] text-[#fff]">TEL 080-3968-0313</a>
         <p class="text-[12px] text-center text-white mt-auto">© HAKUウェブデザイン ALL RIGHTS RESERVED</p>
         <img
             class="absolute top-[-60px] left-[-100px] z-[20]"
