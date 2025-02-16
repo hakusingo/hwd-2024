@@ -1,30 +1,40 @@
 ---
-import { siteMeta } from '../lib/constants';
+import { siteMeta } from "../lib/constants";
 const { siteTitle, siteDesc, siteLocale, siteType, siteIcon, siteImg } =
-	siteMeta;
+  siteMeta;
 
 const { pageTitle, description = siteDesc, pageImg = siteImg } = Astro.props;
 
 const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site || "https://haku-design.net"
+);
+
 const socialImageURL = new URL(pageImg, Astro.site);
 ---
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EHPCHK8N2"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
 
-	gtag('config', 'G-3EHPCHK8N2');
+<!-- Google tag (gtag.js) -->
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-M6Z8M8N2");
 </script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 
 <title>
-	{title}
+  {title}
 </title>
 <meta property="og:title" content={title} />
 <meta name="description" content={description} />
@@ -38,40 +48,38 @@ const socialImageURL = new URL(pageImg, Astro.site);
 <link rel="apple-touch-icon" href={siteIcon} />
 <meta property="og:image" content={socialImageURL} />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon-180x180.png">
-<link rel="icon" type="image/png" href="/icon-192x192.png">
-<meta name="google-site-verification" content="3tvtnbgrmAbzzT-ghPYhaixWFG5cOvfUC00rVCxlZDA" />
-<style>
-	/* m-plus-rounded-1c-regular - japanese */
-	@font-face {
-		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-		font-family: 'M PLUS Rounded 1c';
-		font-style: normal;
-		font-weight: 400;
-		src: url('../fonts/m-plus-rounded-1c-v15-japanese-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-	}
-	/* m-plus-rounded-1c-700 - japanese */
-	@font-face {
-		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-		font-family: 'M PLUS Rounded 1c';
-		font-style: normal;
-		font-weight: 700;
-		src: url('../fonts/m-plus-rounded-1c-v15-japanese-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-	}
-	/* noto-sans-jp-regular - japanese */
-	@font-face {
-		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-		font-family: 'Noto Sans JP';
-		font-style: normal;
-		font-weight: 400;
-		src: url('../fonts/noto-sans-jp-v52-japanese-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-	}
-	/* noto-sans-jp-700 - japanese */
-	@font-face {
-		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-		font-family: 'Noto Sans JP';
-		font-style: normal;
-		font-weight: 700;
-		src: url('../fonts/noto-sans-jp-v52-japanese-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-	}
-</style>
+<link
+  rel="apple-touch-icon"
+  type="image/png"
+  href="/apple-touch-icon-180x180.png"
+/>
+<link rel="icon" type="image/png" href="/icon-192x192.png" />
+<meta
+  name="google-site-verification"
+  content="3tvtnbgrmAbzzT-ghPYhaixWFG5cOvfUC00rVCxlZDA"
+/>
+<!-- Google Fonts の最適化 -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+  crossorigin="anonymous"
+/>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin="anonymous"
+/>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+  rel="stylesheet"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+  />
+</noscript>

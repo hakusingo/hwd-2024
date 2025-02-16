@@ -1,0 +1,139 @@
+---
+import { Image } from "astro:assets";
+import casePic01 from "/src/images/lp/case/case01.jpg";
+import casePic02 from "/src/images/lp/case/case02.jpg";
+import casePic03 from "/src/images/lp/case/case03.jpg";
+import casePic04 from "/src/images/lp/case/case04.jpg";
+import casePic05 from "/src/images/lp/case/case05.jpg";
+import casePic06 from "/src/images/lp/case/case06.jpg";
+import casePic07 from "/src/images/lp/case/case07.jpg";
+import casePic08 from "/src/images/lp/case/case08.jpg";
+import casePic09 from "/src/images/lp/case/case09.jpg";
+import caseBg from "/src/images/lp/case/case-bg.jpg";
+
+const caseItems = [
+  {
+    title: "久夫美術館様",
+    img: casePic01,
+    description:
+      "美術館の建物や作品、カフェメニューなど雰囲気を伝えるため、スライド写真を使い美術館の魅力が伝わるように作成しました。英語ページも作成しました。",
+    link: "https://hisaobijutsukan.com/",
+  },
+  {
+    title: "LAYDAY BEER様",
+    img: casePic02,
+    description:
+      "うるま市発クラフトビールブランドイメージを強調し、商品の魅力を最大限に伝えるデザイン。見やすいメニューデザイン、英語にも対応",
+    link: "https://laydaybeer.com/",
+  },
+  {
+    title: "ハクウェブデザイン",
+    img: casePic03,
+    description:
+      "現在流行中のスマホ特化型デザインで作成、PC画面でもスマホをスクロールするようなデザイン。AstroJSで作成し爆速でサイトが表示、ページ遷移します。",
+    link: "https://haku-design.net/",
+  },
+  {
+    title: "名刺センター 宜野湾店様",
+    img: casePic04,
+    description:
+      "明るい感じのテンプレートを使用し、ユーザーが必要とする情報に合わせてカスタマイズしました。シンプルでありながら情報は充実！！",
+    link: "https://laugh-d.design/",
+  },
+  {
+    title: "ヤマシロ鍼灸整骨院様",
+    img: casePic05,
+    description:
+      "県内３店舗運営している、整骨院様のサイト制作。たくさんの方にご利用いただけるよう「治療メニュー」や「症状別」で記事もライティングさせていただきました。",
+    link: "https://yamashiro-seikotuin.okinawa/",
+  },
+  {
+    title: "株式会社 66様",
+    img: casePic06,
+    description:
+      "テンプレートを使用しウェブで名刺の代わりになる、会社情報+ブログ機能を追加したホームページ。アナリティクスを導入に閲覧数などの解析もご利用いただけます。",
+    link: "https://kabu66.com/",
+  },
+  {
+    title: "AIブログ",
+    img: casePic07,
+    description:
+      "構成から記事の執筆、画像生成に生成AIを使ったAIのブログサイトです。テンプレートを使用していて、同様のデザインであれば最短3日で納品可能です。(※内容による)",
+    link: "https://aiblog.haku-design.net/",
+  },
+  {
+    title: "宮城カズトシ様",
+    img: casePic08,
+    description:
+      "うるま市市議会議(2024年現在)宮城カズトシ様のホームページ、実績や政策などわかりやすくページも豊富に作成。各種SNS作成、動画も撮影編集しました。",
+    link: "https://miyagi-kazutoshi.com/",
+  },
+  {
+    title: "W'sネイル様",
+    img: casePic09,
+    description:
+      "隠れ家的なネイルサロンのホームページを制作。お客様のお好みに合わせてガーリッシュな感じに仕上げました。リアルタイムでInstagramの作品を閲覧可能。",
+    link: "https://ws-nail.com/",
+  },
+];
+---
+
+<section class="relative" id="case">
+  <Image
+    src={caseBg}
+    alt="背景"
+    class="absolute top-0 bottom-0 h-full object-cover"
+  />
+  <div class="py-[112px] lp-container">
+    <h2 class="text-[40px] font-[700] relative flex justify-center mb-[18px]">
+      <img src="/images/lp/case/case-header.svg" alt="制作事例" width="185" />
+    </h2>
+    <div class="z-10 relative">
+      <!-- Splide スライダー -->
+      <div
+        class="splide border-[4px] bg-white border-[#b3b3b3] rounded-[16px] p-[24px] pb-[48px]"
+        id="caseSlider"
+      >
+        <div class="splide__track">
+          <ul class="splide__list">
+            {
+              caseItems.map((item, index) => (
+                <li class="splide__slide flex flex-col">
+                  <h3 class="flex justify-center mb-[16px]">
+                    <span class="bg-black text-white pt-[4px] pb-[6px] px-[32px] text-[18px] font-[500] tracking-[0.08em] rounded-[10px]">
+                      {item.title}
+                    </span>
+                  </h3>
+
+                  <figure class="mb-[16px]">
+                    <Image
+                      src={item.img}
+                      alt={`${item.title} ウェブサイト`}
+                      class=""
+                    />
+                  </figure>
+                  <p class="mb-[32px] px-[16px] leading-[1.75]">
+                    {item.description}
+                  </p>
+                  <a
+                    href={item.link}
+                    class="mt-auto relative font-[500] flex justify-center border-[3px] mx-[16px] border-black py-[12px]"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>ウェブサイトへ</span>
+                    <img
+                      class="absolute top-[50%] -translate-y-[50%] right-[24px] w-[16px] h-[16px]"
+                      src="/images/common/external-icon.svg"
+                      alt="外部リンクアイコン"
+                    />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

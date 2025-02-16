@@ -1,0 +1,165 @@
+---
+import { Image } from "astro:assets";
+import hero from "/src/images/lp/header/header_log.png";
+---
+
+<header class="lp-container sticky top-0 left-0 w-full bg-white shadow-md z-50">
+  <div class="flex justify-between items-center h-[54px]">
+    <!-- ロゴ -->
+    <a href="/lp" class="flex gap-x-[8px] items-center">
+      <Image
+        src={hero}
+        alt="ハクウェブデザインロゴ"
+        loading="eager"
+        decoding="sync"
+        class="h-[36px] w-[36px]"
+      />
+      <div class="font-m font-[500] flex flex-col">
+        <span class="text-[12px]">沖縄のホームページ制作</span>
+        <span class="text-[18px] font-[700] -mt-[3px]">ハクウェブデザイン</span>
+      </div>
+    </a>
+
+    <div class="flex gap-x-[16px] items-center">
+      <a href="tel:080-3968-0313" class="flex items-center gap-x-[8px]">
+        <img src="/images/lp/header/phone_blk.svg" alt="電話" />
+        <!-- <span class="text-[18px] font-[700] hidden lg:block">080-3968-0313</span> -->
+      </a>
+      <button class="flex flex-col gap-y-[10px] nav-btn">
+        <span class="block h-[3px] w-[24px] bg-[black] rounded-[24px]"></span>
+        <span class="block h-[3px] w-[24px] bg-[black] rounded-[24px]"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div
+  class="lp-nav z-50 fixed top-[54px] w-[100%] max-w-[480px] h-[calc(100vh-54px)] bg-white"
+>
+  <nav
+    class="flex flex-col justify-center h-[100%] items-center pb-[80px] gap-y-[32px] text-[24px]"
+  >
+    <a href="#plan" class="">料金プラン</a>
+    <a href="#case" class="">作品事例</a>
+    <a href="#flow" class="">制作の流れ</a>
+    <a href="#contact" class="">お問い合わせ</a>
+    <a href="#faq" class="">よくあるご質問</a>
+  </nav>
+</div>
+
+<style>
+  .nav-btn.open {
+    row-gap: unset;
+  }
+  .nav-btn.open span:nth-child(1) {
+    rotate: 45deg;
+    transform: translate(1px, 1px);
+  }
+  .nav-btn.open span:nth-child(2) {
+    rotate: -45deg;
+    transform: translate(1px, -1px);
+  }
+
+  .nav-btn span {
+    transition: all cubic-bezier(0, 0, 0, 1) 0.3s;
+  }
+
+  .lp-nav.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .lp-nav {
+    transition: all cubic-bezier(0, 0, 0, 1) 0.3s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .lp-nav {
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .lp-nav.open {
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+  }
+  nav a {
+    position: relative;
+  }
+
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px; /* 文字の下に配置 */
+    width: 100%;
+    height: 10px; /* マーカーの高さ */
+    background: yellow;
+    opacity: 0.6;
+    z-index: -1;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navBtn = document.querySelector(".nav-btn");
+    const lpNav = document.querySelector(".lp-nav");
+    const navLinks = document.querySelectorAll(".lp-nav a");
+
+    // 初期状態をリセット
+    navBtn.classList.remove("open");
+    lpNav.classList.remove("open");
+
+    navBtn.addEventListener("click", () => {
+      const isOpen = navBtn.classList.contains("open");
+
+      // ハンバーガーメニューの開閉
+      navBtn.classList.toggle("open");
+      lpNav.classList.toggle("open");
+
+      if (isOpen) {
+        closeNav();
+      } else {
+        openNav();
+      }
+    });
+
+    // ナビゲーションのリンクをクリックしたらメニューを閉じる
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault(); // デフォルトの動作を防ぐ
+        const targetId = link.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 54,
+            behavior: "smooth",
+          });
+
+          // メニューを閉じる
+          closeNav();
+        }
+      });
+    });
+
+    // メニューを開く関数
+    function openNav() {
+      lpNav.style.display = "block";
+      setTimeout(() => {
+        lpNav.style.opacity = "1";
+        lpNav.style.pointerEvents = "all";
+      }, 10);
+    }
+
+    // メニューを閉じる関数
+    function closeNav() {
+      navBtn.classList.remove("open");
+      lpNav.style.opacity = "0";
+      lpNav.style.pointerEvents = "none";
+      setTimeout(() => {
+        lpNav.style.display = "none";
+      }, 300);
+    }
+  });
+</script>

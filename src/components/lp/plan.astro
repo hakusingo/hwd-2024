@@ -1,0 +1,274 @@
+---
+import { Image } from "astro:assets";
+import planTopPic from "/src/images/lp/plan/plan-intro.jpg";
+import planOutroPic from "/src/images/lp/plan/plan-outro.jpg";
+
+const planItems = [
+  {
+    name: "シンプルLPプラン",
+    price: "60,000~",
+    description: "1ページのシンプルランディングページ。",
+    features: [
+      "簡潔で伝わりやすいテンプレートレイアウト",
+      "最短3日で公開可能（※デザインおまかせ＆素材提供がある場合）",
+      "スマホ・タブレット最適化済み",
+      "商品・サービスの魅力をシンプルに伝える",
+      "基本SEO設定込み、検索エンジンにも配慮",
+    ],
+    bgColor: "#8ECF78", // 新しく考えた一番安いプランの色
+  },
+  {
+    name: "ベーシックプラン",
+    price: "100,000",
+    description: "トップページと2つの主要ページを想定。",
+    features: [
+      "テンプレートを活用したデザイン",
+      "スマホ対応（レスポンシブデザイン）",
+      "基本的なSEO対策",
+      "お問い合わせフォーム設置",
+      "納期の目安：最短7日～2週間",
+    ],
+    bgColor: "#FF6F00",
+  },
+  {
+    name: "プレミアムプラン",
+    price: "150,000",
+    description: "トップページと２つの主要ページ＋ブログ・お知らせ機能",
+    features: [
+      "ベーシックプランの内容を全て包括",
+      "ブログ機能やお知らせページ追加可能",
+      "更新マニュアル付き",
+      "納期の目安：3週間～1ヶ月",
+    ],
+    bgColor: "#263751",
+  },
+  {
+    name: "オリジナルデザインプラン",
+    price: "298,000",
+    description: "トップページと5つの下層ページ+ブログ・お知らせ機能",
+    features: [
+      "お客様のお好きなデザインで制作します",
+      "ベーシックプランの内容を全て包括",
+      "アニメーション・動的エフェクト対応",
+      "SNSとの相乗効果を意識した設計",
+      "公開後の運用サポート（1ヶ月間無料）",
+      "アナリティクス、サーチコンソール導入サポート",
+      "納期の目安：3週間～1ヶ月",
+      "期間限定ショート動画無料作成!!",
+    ],
+    bgColor: "#F6594D",
+  },
+];
+
+const planOptions = [
+  {
+    name: "ページ追加",
+    price: "20,000~",
+    description: "※プランや追加するページ内容により変動します。",
+  },
+  {
+    name: "名刺・チラシ・のぼり作成",
+    price: "30,000~",
+  },
+  {
+    name: "SNS運用代行",
+    price: "30,000~",
+  },
+  {
+    name: "多言語対応（英語・中国語）",
+    price: "50,000~",
+  },
+  {
+    name: "オンライン予約・ECサイト",
+    price: "50,000~",
+  },
+  {
+    name: "ランディングページ追加",
+    price: "50,000~",
+  },
+  {
+    name: "保守・運用サポート",
+    price: "10,000~",
+  },
+  {
+    name: "ウェブ集客サブスクプラン",
+    price: "要相談",
+  },
+];
+---
+
+<section class="" id="plan">
+  <div class="relative overflow-hidden">
+    <div
+      class="z-10 plan-inner absolute text-white left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
+    >
+      <h2 class="plan-header z-[100] relative flex flex-col items-center">
+        <span class="text-[24px]"
+          >選べる<span class="text-[42px] text-c_yellow">4</span>つの</span
+        >
+        <span class="text-[42px] block font-[700] whitespace-nowrap"
+          >料金プラン</span
+        >
+      </h2>
+    </div>
+    <div class="plan-intro-bg">
+      <Image src={planTopPic} alt="ハクウェブデザイン" class="-z-[10]" />
+    </div>
+  </div>
+  <div class="plan-contents lp-container pb-[80px]">
+    <div class="plan-menu pb-[64px] flex flex-col gap-y-[40px]">
+      {
+        planItems.map((item) => (
+          <div class="plan-item">
+            <h3
+              class="target mb-[8px] plan-item-header rounded-t-[12px] text-white pt-[28px] pb-[12px] flex flex-col items-center"
+              style={`background-color: ${item.bgColor};`}
+            >
+              <div class="text-[24px] font-[700] mb-[8px]">{item.name}</div>
+              <div class="text-[40px] font-[700]">
+                {item.price}
+                <span class="text-[20px]">円(税込)</span>
+              </div>
+              <div class="text-[12px]" set:html={item.description} />
+            </h3>
+            <div class="flex flex-col gap-y-[8px]">
+              {item.features.map((feature) => (
+                <div class="bg-white px-[16px] py-[18px] flex items-start gap-x-[8px]">
+                  <img
+                    src="/images/lp/plan/plan-check.svg"
+                    alt="チェック"
+                    width="18"
+                    class="pt-[4px]"
+                  />
+                  <p>{feature}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="plan-option mb-[24px]">
+      <h3
+        class="mb-[24px] border-[3px] border-[#424242] text-center rounded-[32px] text-[18px] font-[700] bg-white py-[14px]"
+      >
+        オプションメニュー
+      </h3>
+      <div class="plan-option-contents flex flex-col gap-y-[8px]">
+        {
+          planOptions.map((option) => (
+            <div class="plan-option-item bg-white p-[16px]">
+              <div class="flex justify-between mb-[8px]">
+                <div class="flex gap-x-[8px]">
+                  <img
+                    src="/images/lp/plan/plan-plus.svg"
+                    alt="プラス"
+                    width="18"
+                    class=""
+                  />
+                  <p class="text-[16px]">{option.name}</p>
+                </div>
+                <p class="text-[16px] font-[500]">{option.price}</p>
+              </div>
+              {option.description && (
+                <span class="plan-option-description text-[12px] text-center block">
+                  {option.description}
+                </span>
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="bg-white relative plan-outro">
+      <figure class="absolute bottom-0">
+        <Image src={planOutroPic} alt="ハクウェブデザイン" class="" />
+      </figure>
+      <div class="relative pt-[40px] z-20">
+        <h3 class="mb-[24px] text-center text-c_orange font-[700] text-[18px]">
+          ホームページ制作するにあたり
+        </h3>
+        <p class="px-[24px] flex flex-col leading-[1.75] mb-[40px]">
+          <span
+            >上記のオプション以外にも、会員制サイトの構築やチャット機能の導入、撮影、アクセス解析なども対応可能です。</span
+          >
+          <span>ホームページ制作は、目的によって形を変えるものです。</span>
+          <span
+            >お客様のご要望・ご予算に合わせて、最適なプランをご提案いたします、ぜひご相談ください。</span
+          >
+        </p>
+        <!-- CTAボタン -->
+        <div class="flex items-center flex-col gap-y-[8px] pb-[40px]">
+          <a
+            href="#contact"
+            class="w-[365px] border-[2px] border-[#fff] rounded-[30px] py-[8px] flex flex-col items-center bg-gradient-to-b from-[#FF8C42] to-[#FF6F00] text-white"
+          >
+            <span class="text-[14px] font-[500]"
+              >ご相談無料です。お気軽に！！</span
+            >
+            <span class="text-[20px] font-[700]">ウェブ集客のお問い合わせ</span>
+          </a>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSezjEqu-fT07rUu8mofvwyjvrqp90rViKBnI7ljhqnJinzBnA/viewform?usp=dialog"
+            class="w-[365px] border-[2px] border-[#fff] rounded-[30px] py-[8px] flex flex-col items-center bg-gradient-to-b from-[#0091ea] to-[#006bb3] text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="text-[14px] font-[500]">集客に必須のSNSを簡単代行</span
+            >
+            <span class="text-[20px] font-[700]">SNS運用代行のお問い合わせ</span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .plan-intro-bg::before {
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 174, 239, 0.8);
+    position: absolute;
+  }
+  .plan-header::before,
+  .plan-header::after {
+    content: url("/images/lp/plan/plan-intro-ill.svg");
+    position: absolute;
+  }
+
+  .plan-header::after {
+    right: -88px;
+  }
+
+  .plan-header::before {
+    left: -88px;
+    transform: scalex(-1);
+  }
+
+  .plan-contents {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 174, 239, 0.8),
+      rgba(218, 250, 255, 1)
+    );
+  }
+
+  .plan-outro::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(153, 153, 153, 0.6)
+    );
+  }
+</style>

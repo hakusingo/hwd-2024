@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import hero from "/src/images/lp/header/header_log.png";
+---
+
+<footer class="bg-[#FF6F00] pt-[48px] pb-[12px]">
+  <h2
+    class="text-white flex flex-col justify-center items-center gap-y-[4px] mb-[12px]"
+  >
+    <span>LP制作/ホームページ制作</span>
+    <span class="font-[700]">ハクウェブデザイン</span>
+  </h2>
+  <figure class="flex justify-center mb-[40px]">
+    <Image
+      src={hero}
+      alt="ハクウェブデザインロゴ"
+      class="h-[120px] w-[120px] flex justify-center"
+      width="120"
+    />
+  </figure>
+  <div class="footer-btn flex flex-col gap-y-[8px] items-center mb-[16px]">
+    <a href="tel:08039680313">
+      <img src="/images/lp/contact/contact-phone.svg" alt="電話アイコン" />
+      080-3968-0313
+      <img src="/images/common/external-icon.svg" alt="外部リンクアイコン" />
+    </a>
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSeV8T9KsjG2MbqX57n4Jv8CU-wHeRsxhitiSpYx7JLSqbzJKQ/viewform?usp=pp_url"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="/images/lp/contact/contact-form.svg" alt="フォームアイコン" />
+      フォームへ移動
+      <img src="/images/common/external-icon.svg" alt="外部リンクアイコン" />
+    </a>
+    <a href="https://lin.ee/EVn5p0C" target="_blank" rel="noopener noreferrer">
+      <img src="/images/lp/contact/contact-line.svg" alt="LINEアイコン" />
+      公式LINEへ
+      <img src="/images/common/external-icon.svg" alt="外部リンクアイコン" />
+    </a>
+  </div>
+  <p class="text-center text-[14px] mb-[18px]">営業時間(10:00~19:00)</p>
+  <a
+    href="https://haku-design.net/policy/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex justify-center underline text-[14px] mb-[48px]"
+  >
+    プライバシーポリシー
+  </a>
+  <div class="text-[12px] text-white text-center">© haku-design.com</div>
+</footer>
+<style>
+  .footer-btn a {
+    position: relative;
+    background-color: #fff;
+    border: 3px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 266px;
+    height: 36px;
+    column-gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .footer-btn img:first-child {
+    height: 18px;
+  }
+  .footer-btn img:nth-of-type(2) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+  }
+</style>

@@ -1,35 +1,46 @@
 ---
-import '../styles/default.css';
-import '../styles/splide.min.css';
+import "../styles/default.css";
+import "../styles/splide.min.css";
 
-import Header from '../components/header.astro';
-import Footer from '../components/footer.astro';
-import Meta from '../components/meta.astro';
-import Spnav from '../components/spnav.astro';
-import NavButton from '../components/navButton.astro';
-import PcHero from '../components/pcHero.astro'
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+import Meta from "../components/meta.astro";
+import Spnav from "../components/spnav.astro";
+import NavButton from "../components/navButton.astro";
+import PcHero from "../components/pcHero.astro";
 
 const props = Astro.props;
 ---
 
 <html lang="ja">
-	<head>
-		<Meta {...props} />
-	</head>
-	<body class="bg-[#f2b174] flex flex-col items-center lg:items-end">
-        <NavButton />
-        <div class="mainContent max-w-[500px] w-full relative bg-white overflow-hidden z-[0]">
-            <Header {...props} />
-            <Spnav />
-            <main>
-                <slot />
-            </main>
-            <Footer />
-        </div>
-        <PcHero/>
+  <head>
+    <Meta {...props} />
+  </head>
+  <body class="bg-[#f2b174] flex flex-col items-center lg:items-end">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-M6Z8M8N2"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+        loading="lazy"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <NavButton />
+    <div
+      class="mainContent max-w-[500px] w-full relative bg-white overflow-hidden z-[0]"
+    >
+      <Header {...props} />
+      <Spnav />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <PcHero />
 
-        <script src="/js/splide.min.js" defer></script>
-        <script src="/js/main.js" defer></script>
-	</body>
+    <script src="/js/splide.min.js" defer></script>
+    <script src="/js/main.js" defer></script>
+  </body>
 </html>
-

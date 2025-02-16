@@ -1,0 +1,26 @@
+.lp-container {
+    padding-inline: 16px;
+}
+
+body {
+    letter-spacing: 0.05em;
+}
+
+.splide__arrow--next {
+    right: 0;
+    background-color: black;
+    opacity: 1;
+}
+.splide__arrow--prev {
+    left: 0px;
+    background-color: black;
+    opacity: 1;
+}
+
+.splide__arrow svg {
+    fill: white;
+}
+
+.splide .splide__pagination.splide__pagination--ltr {
+    margin-bottom: -12px;
+}

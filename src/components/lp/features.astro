@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+import featuresIll01 from "/src/images/lp/features/features-ill-01.png";
+import featuresIll02 from "/src/images/lp/features/features-ill-02.png";
+import featuresIll03 from "/src/images/lp/features/features-ill-03.png";
+import featuresIll04 from "/src/images/lp/features/features-ill-04.png";
+import featuresIll05 from "/src/images/lp/features/features-ill-05.png";
+import featuresIll06 from "/src/images/lp/features/features-ill-06.png";
+
+const featureItems = [
+  {
+    img: featuresIll01,
+    ttl: "一貫した体制で<br>スムーズな進行",
+    txt: "企画・構成・デザイン・コーディング・保守・運用まで、すべてワンストップで対応。お客様と密に連携し、意思疎通がスムーズで濃密なやり取りが可能！",
+  },
+  {
+    img: featuresIll02,
+    ttl: "ビジネスの目的に最適な戦略をご提案!!",
+    txt: "お客様の目標や業種に合わせた最適な戦略をご提案し、場合によっては、ホームページを作らなくても効果的な方法をご案内することもございます。",
+  },
+  {
+    img: featuresIll03,
+    ttl: "SNSの活用を前提としたホームページ設計",
+    txt: "ホームページと同じくらい、SNSの運用は重要です。<br>そのため、SNSの活用を前提としたホームページを設計し、連携をスムーズにします。",
+  },
+  {
+    img: featuresIll04,
+    ttl: "沖縄県内の企業なら、別途素材の撮影もOK!",
+    txt: "店舗・商品・スタッフ写真など、ウェブサイトに必要な素材の撮影も対応可能。地元ならではのつながりを活かし、ビジュアル面からも魅力を最大限に引き出します！",
+  },
+  {
+    img: featuresIll05,
+    ttl: "ウェブ集客は丸ごとお任せ、サブスクプランも可能",
+    txt: "プロの集客をお任せ!!戦略的な企画を立案し、ホームページやSNS、広告運用やアナリティクス解析などまるッとお任せもOK、会議等の参加もOK。 あなたは事業に専念できます。",
+  },
+  {
+    img: featuresIll06,
+    ttl: "納品後の運用も安心！サポート付きプランあり",
+    txt: "ホームページ制作後の運用も含めたお見積りをご提案するので、コスト面も事前に把握できて安心。更新がしやすい管理システムでの制作も行っています。",
+  },
+];
+---
+
+<section class="pb-[120px] overflow-hidden">
+  <div
+    class="mb-[32px] header-section relative h-[240px] bg-c_orange flex justify-center items-centern"
+  >
+    <h2
+      class="relative z-10 text-white flex flex-col justify-center items-center font-[700] text-[24px]"
+    >
+      <span class="text-[16px]">他社とは違う</span>
+      ハクウェブデザインの特徴
+      <img
+        class="absolute pt-[8px] -right-[40px]"
+        src="/images/lp/features/features-header-deco.svg"
+        alt="装飾"
+        width="40"
+      />
+      <img
+        class="absolute pt-[8px] -left-[40px] scale-x-[-1]"
+        src="/images/lp/features/features-header-deco.svg"
+        alt="装飾"
+        width="40"
+      />
+    </h2>
+    <img
+      class="absolute top-[50%] -translate-y-[56%] left-[50%] opacity-[20%]"
+      src="/images/lp/features/features-guts.svg"
+      alt="青年のガッツポーズ"
+      width="176"
+    />
+  </div>
+
+  <div class="lp-container">
+    <div class="features-contents flex flex-col gap-y-[56px]">
+      {
+        featureItems.map((item, index) => (
+          <div class="relative shadow-lg features-item flex p-[16px] gap-x-[8px] border-[3px] border-[#B3B3B3] rounded-[12px]">
+            <img
+              class="absolute -top-[48px] right-0 target fade-in-right"
+              src="/images/lp/features/features-good.svg"
+              alt="GOOD"
+              width="88"
+            />
+            <figure class="basis-[38%] shrink-0 target">
+              <Image src={item.img} alt="ハクウェブデザインの特徴" class="" />
+            </figure>
+            <div>
+              <h3
+                class="pb-[8px] mb-[8px] border-b-[2px] font-[700] text-[18px]"
+                set:html={item.ttl}
+              />
+              <p set:html={item.txt} />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .header-section::before,
+  .header-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 64px;
+    background-color: white;
+  }
+
+  .header-section::before {
+    left: 0;
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+  }
+
+  .header-section::after {
+    right: 0;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+
+  .features-contents > div:not(:last-of-type)::after {
+    content: url(/images/lp/features/features-divide-plus.svg);
+    display: block;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+</style>

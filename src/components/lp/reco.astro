@@ -1,0 +1,215 @@
+---
+import { Image } from "astro:assets";
+import recoHeaderImg from "/src/images/lp/reco/reco_heading_bg.jpg";
+import recoImg01 from "/src/images/lp/reco/reco01.jpg";
+import recoImg02 from "/src/images/lp/reco/reco02.jpg";
+import recoImg03 from "/src/images/lp/reco/reco03.jpg";
+
+// ループで回すコンテンツリスト
+const recoItems = [
+  {
+    img: recoImg01,
+    caption: "デザイン",
+    items: [
+      {
+        title:
+          "ウェブサイトが古くて<span class='underline-y'>スマホで見づらい</span>",
+        text: "訪問者がスマホで見づらいサイトは、問い合わせを逃してしまいます。最新のデザインとレスポンシブ対応で、どんなデバイスでも見やすいサイトに改善します。",
+      },
+      {
+        title:
+          "デザインや構成が<span class='underline-y'>ごちゃごちゃしている</span>",
+        text: "情報が整理されていないと、訪問者が迷い、離脱率が上がります。シンプルで直感的なデザインに整えることで、滞在時間やコンバージョンを向上させます。",
+      },
+      {
+        title: "競合と比べて<span class='underline-y'>見劣りしてしまう</span>",
+        text: "第一印象が大事！プロフェッショナルなデザインで、信頼感のあるサイトを構築し、競合との差別化を図ります。オリジナルのデザインでも作成可能です。",
+      },
+    ],
+  },
+  {
+    img: recoImg02,
+    caption: "マーケティング",
+    items: [
+      {
+        title:
+          "<span class='underline-y'>SEO対策</span>されてなく問い合わせが増えない",
+        text: "検索エンジンで上位表示されなければ、見込み客にサイトを見つけてもらえません。適切なキーワード設計や内部対策で、検索結果の上位を狙います。",
+      },
+      {
+        title:
+          "SNSと連携がなく、<span class='underline-y'>アクセスが増えない</span>",
+        text: "SNSはサイトへの流入を増やす重要なツールです。InstagramやX（旧Twitter）、Facebook等の連携を強化し、アクセスを増やす仕組みを作ります。",
+      },
+      {
+        title:
+          "お問い合わせやCTAへの<span class='underline-y'>動線がない</span>",
+        text: "訪問者が迷わず問い合わせできるよう、CTA（行動喚起）ボタンやフォームの設計を改善し、コンバージョン率を向上させます。",
+      },
+      {
+        title:
+          "広告を運用したいが、<span class='underline-y'>やり方が分からない</span>",
+        text: "Instagram・Facebook・Google広告を活用し、狙ったターゲットに的確にアプローチ。最適な広告運用を代行し、無駄なコストを抑えながら集客を強化します。",
+      },
+    ],
+  },
+  {
+    img: recoImg03,
+    caption: "コスト・ご予算",
+    items: [
+      {
+        title:
+          "<span class='underline-y'>予算内で高品質な</span>サイトを作りたい",
+        text: "高額な制作費に悩んでいませんか？ご予算に合わせた最適なプランを提案し、無駄なく効果的なサイト制作を実現します。",
+      },
+      {
+        title:
+          "リニューアルしたいが、<span class='underline-y'>どこにお金をかけるべきかわからない</span>",
+        text: "どのような目的でホームページを作成するのか？を事前にお聞きし、目標を達成するよう戦略的な構成をご提案。CVしてくれる動線設計を施したホームページをご予算に応じて制作します。",
+      },
+      {
+        title:
+          "保守運用や広告運用の<span class='underline-y'>料金が不透明で不安</span>",
+        text: "広告運用の手数料やサイトの維持管理の料金体系が不透明だと、後からコストが膨らんでしまうことも。当社では事前に見積もりを提示し、明確な料金で安心してご依頼いただけます。",
+      },
+    ],
+  },
+];
+---
+
+<section class="lp-container pt-[80px] pb-[72px] leading-[1.75]">
+  <div class="relative text-center mb-[40px]">
+    <h2
+      class="relative bg-c_orange text-white overflow-hidden pt-[24px] pb-[54px]"
+    >
+      <Image
+        src={recoHeaderImg}
+        alt="ハクウェブデザイン"
+        class="top-0 absolute h-full object-cover overflow-hidden opacity-[20%]"
+      />
+      <div
+        class="reco-header-inner text-[18px] font-[700] relative tracking-[0]"
+      >
+        このような方に
+        <span class="text-[32px] relative">オ</span>
+        <span class="text-[32px] relative">ス</span>
+        <span class="text-[32px] relative">ス</span>
+        <span class="text-[32px] relative">メ</span>
+        です!!
+      </div>
+    </h2>
+  </div>
+
+  <div class="loop">
+    {
+      recoItems.map((section, index) => (
+        <div class="loop-item px-[38px] mb-[48px]">
+          <div class="relative mb-[24px]">
+            <span class="pic-caption absolute -right-[18px] -top-[28px] block text-[32px] font-[700] target">
+              {section.caption}
+            </span>
+            <figure>
+              <Image
+                src={section.img}
+                alt="ハクウェブデザイン"
+                class="w-full h-auto"
+              />
+            </figure>
+          </div>
+
+          <div class="item text-[14px]">
+            {section.items.map((item, itemIndex) => (
+              <div class="text-box">
+                <h3
+                  class="font-[500] mb-[8px] text-[16px]"
+                  set:html={item.title}
+                />
+                <p class="target">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".underline-y");
+
+    elements.forEach((el) => {
+      el.style.background =
+        "linear-gradient(to right, rgba(253, 251, 93, 0.5) 0%, rgba(253, 251, 93, 0.5) 100%)";
+      el.style.backgroundRepeat = "no-repeat";
+      el.style.backgroundSize = "100% 6px"; // 幅100%、高さ6pxの下線
+      el.style.backgroundPosition = "0 100%"; // 下端に配置
+      el.style.paddingBottom = "0px"; // 文字と下線が重ならないように調整
+      el.style.display = "inline"; // インライン要素として扱う
+    });
+  });
+</script>
+
+<style>
+  .reco-header-inner span::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  h2::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+
+  .item > div:not(:last-of-type) {
+    border-bottom: 1px solid #cdcdcd;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    position: relative;
+  }
+
+  h3::before {
+    content: url("/images/lp/reco/reco_check.svg");
+    position: absolute;
+    top: 4px;
+    left: -24px;
+  }
+
+  .underline-y {
+    position: relative;
+    display: inline-block;
+  }
+
+  .underline-y::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    bottom: 2px; /* テキストの下に配置 */
+    left: 0;
+    width: 100%;
+    height: 6px; /* 下線の太さ */
+    background-color: #fdfb5d; /* 黄色 */
+    opacity: 0.5; /* 透明度 */
+  }
+
+  .loop > div:nth-of-type(2) .pic-caption {
+    right: unset;
+    left: -18px;
+  }
+</style>

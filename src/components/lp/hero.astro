@@ -1,0 +1,228 @@
+---
+import { Image } from "astro:assets";
+import heroBg from "/src/images/lp/hero/hero_bg.jpg";
+
+import heroImg01 from "/src/images/lp/hero/hero_img01.jpg";
+import heroImg02 from "/src/images/lp/hero/hero_img02.jpg";
+import heroImg03 from "/src/images/lp/hero/hero_img03.jpg";
+import heroImg04 from "/src/images/lp/hero/hero_img04.jpg";
+import heroImg05 from "/src/images/lp/hero/hero_img05.jpg";
+import heroImg06 from "/src/images/lp/hero/hero_img06.jpg";
+import heroImg07 from "/src/images/lp/hero/hero_img07.jpg";
+import heroImg08 from "/src/images/lp/hero/hero_img08.jpg";
+import heroImg09 from "/src/images/lp/hero/hero_img09.jpg";
+import heroImg10 from "/src/images/lp/hero/hero_img10.jpg";
+import heroImg11 from "/src/images/lp/hero/hero_img11.jpg";
+
+// 画像リストを配列に格納
+const heroImages = [
+  heroImg01,
+  heroImg02,
+  heroImg03,
+  heroImg04,
+  heroImg05,
+  heroImg06,
+  heroImg07,
+  heroImg08,
+  heroImg09,
+  heroImg10,
+  heroImg11,
+];
+---
+
+<section class="relative pb-[20px] overflow-hidden">
+  <Image
+    src={heroBg}
+    alt="ハクウェブデザイン"
+    loading="eager"
+    decoding="sync"
+    class="h-[100%] w-[100%] absolute top-0 object-cover"
+    width="425"
+  />
+  <!-- 左側のスクロール -->
+  <div class="scroll-container left-0">
+    <div class="scroll-content">
+      {
+        heroImages.map((img, index) => (
+          <Image
+            src={img}
+            loading="eager"
+            decoding="sync"
+            alt={`Image ${index + 1}`}
+            class="w-[80px] h-auto"
+          />
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- 右側のスクロール -->
+  <div class="scroll-container right-0">
+    <div class="scroll-content reverse">
+      <!-- ← ここで .reverse を適用 -->
+      {
+        heroImages.map((img, index) => (
+          <Image
+            src={img}
+            loading="eager"
+            decoding="sync"
+            alt={`Image ${index + 1}`}
+            class="w-[80px] h-auto"
+          />
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="relative z-[10]">
+    <!-- 背景画像・オーバーレイ -->
+    <div class="px-[8px]">
+      <!-- サブキャッチコピー -->
+      <div class="flex justify-center mb-[32px]">
+        <div
+          class="relative mt-[32px] border-[1px] border-c_orange inline-block py-[5px] px-[18px] bg-white"
+        >
+          <!-- 左上の三角 -->
+          <div
+            class="absolute top-[0px] rotate-[180deg] left-[0px] w-0 h-0 border-l-[10px] border-l-transparent border-b-[10px] border-b-c_orange"
+          >
+          </div>
+
+          <p class="text-black">
+            沖縄の中小企業を徹底応援！<br
+            />集客に繋がるウェブサイトを制作します。
+          </p>
+        </div>
+      </div>
+
+      <!-- キャッチコピー -->
+      <div class="target">
+        <h2 class="flex justify-center mb-[32px] relative">
+          <img
+            src="/images/lp/hero/hero_text.svg"
+            width="309"
+            height="245"
+            alt="ウェブ戦略x最適化デザイン=成果に直結"
+          />
+          <img
+            src="/images/lp/hero/hero_smoke.svg"
+            width="425"
+            height="438"
+            alt=""
+            class="absolute -top-[32px] w-full z-[-1]"
+          />
+        </h2>
+
+        <div class="flex justify-center mb-[16px]">
+          <p
+            class="bg-c_orange text-white flex items-center flex-col py-[8px] px-[12px] font-[700]"
+          >
+            <span class="mb-[3px]">あなたのビジネスを次のステージへ！</span>
+            <span class="text-[14px]"
+              >戦略的なホームページを格安&スピーディーに制作</span
+            >
+          </p>
+        </div>
+
+        <!-- 価格情報 -->
+        <p class="flex justify-center mb-[12px]">
+          <img
+            src="/images/lp/hero/hero_price.svg"
+            width="351"
+            height="126"
+            alt="テンプレLP 60,000円~ 最短納品3日間〜 ※コンテンツ内容による"
+          />
+        </p>
+      </div>
+
+      <!-- CTAボタン -->
+      <div class="flex items-center flex-col gap-y-[8px]">
+        <a
+          href="#contact"
+          class="w-[365px] border-[2px] border-[#fff] rounded-[30px] py-[8px] flex flex-col items-center bg-gradient-to-b from-[#FF8C42] to-[#FF6F00] text-white"
+        >
+          <span class="text-[14px] font-[500]"
+            >ご相談無料です。お気軽に！！</span
+          >
+          <span class="text-[20px] font-[700]">ウェブ集客のお問い合わせ</span>
+        </a>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSezjEqu-fT07rUu8mofvwyjvrqp90rViKBnI7ljhqnJinzBnA/viewform?usp=dialog"
+          class="w-[365px] border-[2px] border-[#fff] rounded-[30px] py-[8px] flex flex-col items-center bg-gradient-to-b from-[#0091ea] to-[#006bb3] text-white"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="text-[14px] font-[500]">集客に必須のSNSを簡単代行</span>
+          <span class="text-[20px] font-[700]">SNS運用代行のお問い合わせ</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scrollDown {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+
+  @keyframes scrollUp {
+    0% {
+      transform: translate3d(0, -50%, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .scroll-container {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+  }
+
+  .scroll-content {
+    display: flex;
+    flex-direction: column;
+    animation: scrollDown 80s linear infinite;
+    will-change: transform; /* GPU最適化 */
+  }
+
+  .scroll-content.reverse {
+    animation: scrollUp 80s linear infinite;
+    will-change: transform; /* GPU最適化 */
+  }
+
+  /* 画像リスト */
+  .scroll-content img {
+    display: block;
+    width: 100%;
+    backface-visibility: hidden; /* GPU負荷軽減 */
+  }
+</style>
+<script>
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   const links = document.querySelectorAll("a[href^='#']");
+
+  //   links.forEach((link) => {
+  //     link.addEventListener("click", function (e) {
+  //       e.preventDefault();
+  //       const targetId = this.getAttribute("href").substring(1);
+  //       const targetElement = document.getElementById(targetId);
+
+  //       if (targetElement) {
+  //         window.scrollTo({
+  //           top: targetElement.offsetTop,
+  //           behavior: "smooth",
+  //         });
+  //       }
+  //     });
+  //   });
+  // });
+</script>

@@ -1,0 +1,204 @@
+---
+import "../styles/default.css";
+import "../styles/splide.min.css";
+import "../styles/lp.css";
+
+import Meta from "../components/meta.astro";
+import { Image } from "astro:assets";
+import pcBg from "/src/images/lp/pc/pc-bg.jpg";
+import pcLeft from "/src/images/lp/pc/pc-left.jpg";
+
+const props = Astro.props;
+---
+
+<html lang="ja">
+  <head>
+    <Meta {...props} />
+    <!-- Meta Pixel Code -->
+    <script defer>
+      window.addEventListener("load", function () {
+        !(function (f, b, e, v, n, t, s) {
+          if (f.fbq) return;
+          n = f.fbq = function () {
+            n.callMethod
+              ? n.callMethod.apply(n, arguments)
+              : n.queue.push(arguments);
+          };
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = "2.0";
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = !0;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        })(
+          window,
+          document,
+          "script",
+          "https://connect.facebook.net/en_US/fbevents.js"
+        );
+
+        // Pixelの初期化
+        fbq("init", "9596150607076125");
+        fbq("track", "PageView");
+      });
+    </script>
+
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=9596150607076125&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body class="relative">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-M6Z8M8N2"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <div
+      class="hidden fixed left-0 top-0 h-full w-[calc((100vw-480px)/2)] lg:flex justify-center items-center"
+    >
+      <Image class="" src={pcLeft} alt="背景画像" format="webp" />
+    </div>
+    <div class="max-w-[480px] bg-white relative mx-auto shadow-xl">
+      <slot />
+    </div>
+    <div
+      class="hidden fixed right-0 top-0 h-full w-[calc((100vw-480px)/2)] lg:flex justify-center flex-col gap-y-[24px] items-center"
+    >
+      <div class="contact-item">
+        <img src="/images/lp/contact/contact-phone.svg" alt="電話アイコン" />
+        <h3>お電話でのご相談</h3>
+        <p>(10:00~19:00対応)</p>
+        <a href="tel:08039680313" class="pointer-events-none">
+          080-3968-0313
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <img src="/images/lp/contact/contact-form.svg" alt="フォームアイコン" />
+        <h3>フォームでのお問い合わせ</h3>
+        <p>(24時間受付)</p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeV8T9KsjG2MbqX57n4Jv8CU-wHeRsxhitiSpYx7JLSqbzJKQ/viewform?usp=pp_url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          フォームへ移動
+          <img
+            src="/images/common/external-icon.svg"
+            alt="外部リンクアイコン"
+          />
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <img
+          src="/images/lp/contact/contact-insta.svg"
+          alt="インスタアイコン"
+        />
+        <h3>Instagramでのお問い合わせ</h3>
+        <p>(DMでの受付)</p>
+        <a
+          href="https://www.instagram.com/haku_webdesign/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagramへ移動
+          <img
+            src="/images/common/external-icon.svg"
+            alt="外部リンクアイコン"
+          />
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <img src="/images/lp/contact/contact-line.svg" alt="LINEアイコン" />
+        <h3>LINEでのご相談</h3>
+        <p>(気軽にチャットでお問い合わせ)</p>
+        <img
+          class="w-[100px] !h-[100px] block mx-auto mt-[8px]"
+          src="/images/lp/contact/contact-qr.svg"
+          alt="LINEアイコン"
+        />
+      </div>
+    </div>
+    <div class="bg-container">
+      <Image src={pcBg} alt="背景画像" format="webp" />
+    </div>
+    <script src="/js/splide.min.js" defer></script>
+    <script src="/js/lp.js" defer></script>
+  </body>
+</html>
+<style>
+  .bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -20; /* 背景として配置 */
+  }
+  .bg-container img {
+    object-fit: cover; /* 背景サイズ調整 */
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 1024px以下（SP・タブレット）は非表示 */
+  @media (max-width: 1023px) {
+    .bg-container {
+      display: none;
+    }
+  }
+
+  .contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .contact-item > a {
+    display: flex;
+    border: 3px solid #000;
+    align-items: center;
+    column-gap: 6px;
+    justify-content: center;
+    width: 180px;
+    margin-inline: auto;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-weight: 500;
+    margin-top: 8px;
+    background-color: #fff;
+  }
+  .contact-item > a > img {
+    height: 14px;
+    margin-bottom: -2px;
+  }
+  .contact-item > img {
+    margin-bottom: 8px;
+  }
+  .contact-item h3 {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .contact-item p {
+    font-size: 12px;
+    font-weight: 700;
+  }
+</style>

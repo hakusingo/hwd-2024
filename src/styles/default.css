@@ -89,7 +89,7 @@
 	/* インターセクションオブザーバー */
 	.target {
 		opacity: 0;
-		transition: opacity 1s ease-out, transform 1s ease-out;
+		transition: opacity .54s ease-out, transform .54s ease-out;
 	}
 	
 	.fade-in-right {

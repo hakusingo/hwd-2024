@@ -1,0 +1,123 @@
+---
+import { Image } from "astro:assets";
+import flowPic01 from "/src/images/lp/flow/flow01.jpg";
+import flowPic02 from "/src/images/lp/flow/flow02.jpg";
+import flowPic03 from "/src/images/lp/flow/flow03.jpg";
+import flowPic04 from "/src/images/lp/flow/flow04.jpg";
+import flowPic05 from "/src/images/lp/flow/flow05.jpg";
+import flowPic06 from "/src/images/lp/flow/flow06.jpg";
+const flowItems = [
+  {
+    img: flowPic01,
+    title: "お問い合わせ・ご相談",
+    description:
+      "まずは、お問い合わせフォーム・LINE・お電話よりお気軽にご相談ください。簡単なヒアリングを行います。",
+  },
+  {
+    img: flowPic02,
+    title: "ヒアリング & お見積もり",
+    description:
+      "ビジネスの内容や目的、ご予算をもとに、最適なプランをご提案します。お見積もりを確認いただき、納得いただければ制作を開始します。",
+  },
+  {
+    img: flowPic03,
+    title: "デザイン提案",
+    description:
+      "お好きな配色やデザインの雰囲気、フォントなどをお選びいただき、それをもとにデザインを作成します。写真は素材画像を使用することも可能です。",
+  },
+  {
+    img: flowPic04,
+    title: "ホームページ制作開始",
+    description:
+      "デザイン確定後、サイトの制作を開始します。進捗は随時ご報告し、必要に応じて調整を行いながら進めます。",
+  },
+  {
+    img: flowPic05,
+    title: "最終確認＆公開",
+    description:
+      "完成後、お客様に最終確認をしていただき、問題がなければ正式に公開します。 公開後、基本的な操作方法もご案内します。",
+  },
+  {
+    img: flowPic06,
+    title: "運用サポート (必要な方のみ)",
+    description:
+      "公開後の更新や管理が不安な方には、運用サポートも提供可能です。テキストや画像の更新、アクセス解析など、必要に応じて別途対応いたします。",
+  },
+];
+---
+
+<section id="flow">
+  <div class="py-[80px]">
+    <h2 class="flex flex-col gap-y-[8px] text-c_orange items-center mb-[64px]">
+      <span class="block border-b-[1px] border-b-c_orange">FLOW</span>
+      <span class="text-[26px] font-[700]">ホームページ制作の流れ</span>
+    </h2>
+    <div class="flow-contents flex flex-col gap-y-[40px]">
+      {
+        flowItems.map((item, index) => (
+          <div class="flow-item">
+            <figure class="relative">
+              <img
+                class="flow-item-num absolute -top-[16px]"
+                src={`/images/lp/flow/${(index + 1)
+                  .toString()
+                  .padStart(2, "0")}.svg`}
+                alt={`ステップ${index + 1}`}
+              />
+              <Image src={item.img} alt={item.title} class="flow-item-img" />
+            </figure>
+            <div class="target mx-[16px] w-[324px] py-[24px] px-[16px] relative bg-white shadow-lg -mt-[40px]">
+              <div class="point absolute top-[0px] rotate-[180deg] left-[0px] w-0 h-0 border-l-[10px] border-l-transparent border-b-[10px] border-b-c_orange" />
+              <h3 class="mb-[12px] text-[18px] font-[700] text-c_orange">
+                {item.title}
+              </h3>
+              <p class="leading-[1.75]">{item.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<style>
+  .flow-item .flow-item-img {
+    /* width: calc(354 / 424 * 100%); */
+  }
+  .flow-item figure {
+    width: calc(354 / 424 * 100%);
+  }
+  .flow-item:nth-child(even) figure {
+    margin-left: auto;
+  }
+
+  .flow-item:nth-child(odd) > div {
+    margin-left: auto;
+  }
+  .flow-item:nth-child(odd) figure {
+    display: flex;
+  }
+  .flow-item:nth-child(odd) figure .flow-item-img {
+    border-radius: 0 24px 24px 0;
+  }
+  .flow-item:nth-child(odd) figure .flow-item-num {
+    right: 12px;
+  }
+
+  .flow-item:nth-child(even) figure .flow-item-img {
+    border-radius: 24px 0 0 24px;
+  }
+  .flow-item:nth-child(even) figure .flow-item-num {
+    left: 12px;
+  }
+
+  .flow-item:nth-child(even) figure {
+    display: flex;
+    justify-content: end;
+  }
+
+  .flow-item:nth-child(even) .point {
+    right: 0;
+    left: unset;
+    rotate: 90deg;
+  }
+</style>
