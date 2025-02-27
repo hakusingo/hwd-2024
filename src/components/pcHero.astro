@@ -1,105 +1,116 @@
 ---
 import { Image } from "astro:assets";
-import pcHero from '/src/images/top/hero_pc.jpg';
+import pcHero from "/src/images/top/hero_pc.jpg";
 
 const navMenu = [
-    {
-        menu: "TOP",
-        url: "/"
-    },
-    {
-        menu: "PRODUCT",
-        url: "/#product"
-    },
-    {
-        menu: "PRICE",
-        url: "/pricing"
-    },
-    {
-        menu: "Q&A",
-        url: "/qa"
-    },
-    {
-        menu: "CONTACT",
-        url: "/contact"
-    },
-]
+  {
+    menu: "TOP",
+    url: "/",
+  },
+  {
+    menu: "PRODUCT",
+    url: "/#product",
+  },
+  {
+    menu: "PRICE",
+    url: "/pricing",
+  },
+  {
+    menu: "Q&A",
+    url: "/qa",
+  },
+  {
+    menu: "CONTACT",
+    url: "/contact",
+  },
+];
 ---
-<div class="pc-left-panel hidden lg:block fixed left-0 top-0 w-[calc(100vw-500px)] h-[100svh]">
-    <Image
-        src={pcHero}
-        alt="沖縄の夕日が綺麗なビーチ"
-        loading="eager"
-        decoding="sync"
-        class="object-cover absolute w-full h-full object-left"
-        width="1280"
-    />
-    <div class="cover absolute w-full h-full backdrop-contrast-[.8]"></div>
-    <ul class="z-[30] absolute top-[64px] left-[52px] tracking-[0.05em] text-[24px] font-[700] flex flex-col gap-y-[12px] xl:text-[28px]">
-        {navMenu.map(item => (
-            <li class="font-m">
-                <a rel="prefetch" class="hover:underline" href={item.url}>{item.menu}</a>
-            </li>
-        ))}
-    </ul>
-    <img
-        src="/images/top/hero-sub.svg"
-        class="absolute left-[70%] top-[72px] min-w-[143px] w-[20%] max-w-[220px]"
-        alt="うるま市のウェブ屋さん"
-        width="143"
-    >
-    <img
-        src="/images/top/hero-ttl.svg"
-        class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[50%] min-w-[400] max-w-[560px]"
-        alt="うるま市のウェブ屋さん"
-        width="319"
-    >
-    <ul class="flex gap-x-[24px] items-center absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[200px] z-10">
-        <li>
-            <a href="https://www.instagram.com/haku_webdesign/" target="_blank" rel="noopener noreferrer">
-                <img
-                    width="28"
-                    class=""
-                    src="/images/top/sns1.svg"
-                    alt="instagram"
-                />
-            </a>
+
+<div
+  class="pc-left-panel hidden lg:block fixed left-0 top-0 w-[calc(100vw-500px)] h-[100svh]"
+>
+  <Image
+    src={pcHero}
+    alt="沖縄の夕日が綺麗なビーチ"
+    loading="eager"
+    decoding="sync"
+    class="object-cover absolute w-full h-full object-left"
+    width="1280"
+  />
+  <div class="cover absolute w-full h-full backdrop-contrast-[.8]"></div>
+  <ul
+    class="z-[30] absolute top-[64px] left-[52px] tracking-[0.05em] text-[24px] font-[700] flex flex-col gap-y-[12px] xl:text-[28px]"
+  >
+    {
+      navMenu.map((item) => (
+        <li class="font-m">
+          <a rel="prefetch" class="hover:underline" href={item.url}>
+            {item.menu}
+          </a>
         </li>
-        <li>
-            <a href="https://www.tiktok.com/@haku7371" target="_blank" rel="noopener noreferrer">
-                <img
-                    width="28"
-                    class=""
-                    src="/images/top/sns2.svg"
-                    alt="tictok"
-                />
-            </a>
-        </li>
-        <li>
-            <a href="https://www.youtube.com/@haku_webdesign" target="_blank" rel="noopener noreferrer">
-                <img
-                    width="32"
-                    class=""
-                    src="/images/top/sns3.svg"
-                    alt="youtube"
-                />
-            </a>
-        </li>
-        <li>
-            <a href="https://lin.ee/46QDyVC" target="_blank" rel="noopener noreferrer">
-                <img
-                    width="32"
-                    class=""
-                    src="/images/top/sns4.svg"
-                    alt="LINE"
-                />
-            </a>
-        </li>
-    </ul>
+      ))
+    }
+  </ul>
+  <img
+    src="/images/top/hero-sub.svg"
+    class="absolute left-[70%] top-[72px] min-w-[143px] w-[20%] max-w-[220px]"
+    alt="うるま市のウェブ屋さん"
+    width="143"
+  />
+  <img
+    src="/images/top/hero-ttl.svg"
+    class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[50%] min-w-[400] max-w-[560px]"
+    alt="うるま市のウェブ屋さん"
+    width="319"
+  />
+  <ul
+    class="flex gap-x-[24px] items-center absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[200px] z-10"
+  >
+    <li>
+      <a
+        href="https://www.instagram.com/haku_webdesign/"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event', 'instagram_click', {'event_category': 'CTA', 'event_label': 'Instagram (ホームページ)', 'page_type': 'homepage'});"
+      >
+        <img width="28" class="" src="/images/top/sns1.svg" alt="instagram" />
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.tiktok.com/@haku7371"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event', 'tiktok_click', {'event_category': 'CTA', 'event_label': 'TicTok (ホームページ)', 'page_type': 'homepage'});"
+      >
+        <img width="28" class="" src="/images/top/sns2.svg" alt="tictok" />
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.youtube.com/@haku_webdesign"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event', 'youtube_click', {'event_category': 'CTA', 'event_label': 'Youtube (ホームページ)', 'page_type': 'homepage'});"
+      >
+        <img width="32" class="" src="/images/top/sns3.svg" alt="youtube" />
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://lin.ee/46QDyVC"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event', 'line_click', {'event_category': 'CTA', 'event_label': 'LINE公式 (ホームページ)', 'page_type': 'homepage'});"
+      >
+        <img width="32" class="" src="/images/top/sns4.svg" alt="LINE" />
+      </a>
+    </li>
+  </ul>
 </div>
 
 <style>
-    li {
-        text-shadow: 2px 2px white;
-    }
+  li {
+    text-shadow: 2px 2px white;
+  }
 </style>

@@ -19,7 +19,10 @@ import hero from "/src/images/lp/header/header_log.png";
     />
   </figure>
   <div class="footer-btn flex flex-col gap-y-[8px] items-center mb-[16px]">
-    <a href="tel:08039680313">
+    <a
+      href="tel:08039680313"
+      onclick="gtag('event', 'call_click', {'event_category': 'CTA', 'event_label': '電話ボタン (LP)', 'page_type': 'lp'});"
+    >
       <img src="/images/lp/contact/contact-phone.svg" alt="電話アイコン" />
       080-3968-0313
       <img src="/images/common/external-icon.svg" alt="外部リンクアイコン" />
@@ -28,18 +31,27 @@ import hero from "/src/images/lp/header/header_log.png";
       href="https://docs.google.com/forms/d/e/1FAIpQLSeV8T9KsjG2MbqX57n4Jv8CU-wHeRsxhitiSpYx7JLSqbzJKQ/viewform?usp=pp_url"
       target="_blank"
       rel="noopener noreferrer"
+      onclick="gtag('event', 'form_click', {'event_category': 'CTA', 'event_label': 'Googleフォーム (LP)', 'page_type': 'lp'});"
     >
       <img src="/images/lp/contact/contact-form.svg" alt="フォームアイコン" />
       フォームへ移動
       <img src="/images/common/external-icon.svg" alt="外部リンクアイコン" />
     </a>
-    <a href="https://lin.ee/EVn5p0C" target="_blank" rel="noopener noreferrer">
+    <a
+      href="https://lin.ee/EVn5p0C"
+      target="_blank"
+      rel="noopener noreferrer"
+      onclick="gtag('event', 'line_click', {'event_category': 'CTA', 'event_label': 'LINE公式 (LP)', 'page_type': 'lp'});"
+    >
       <img src="/images/lp/contact/contact-line.svg" alt="LINEアイコン" />
       公式LINEへ
       <img src="/images/common/external-icon.svg" alt="外部リンクアイコン" />
     </a>
   </div>
-  <p class="text-center text-[14px] mb-[18px]">営業時間(10:00~19:00)</p>
+  <p class="text-center text-[14px] mb-[4px]">営業時間(10:00~19:00)</p>
+  <div class="text-center text-[14px] mb-[18px] font-[700]">
+    info@haku-desing.net
+  </div>
   <a
     href="https://haku-design.net/policy/"
     target="_blank"

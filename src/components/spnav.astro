@@ -1,126 +1,139 @@
 ---
 const navMenu = [
-    {
-        menu: "TOP",
-        url: "/"
-    },
-    {
-        menu: "SERVICE",
-        url: "/#service"
-    },
-    {
-        menu: "PRODUCT",
-        url: "/#product"
-    },
-    {
-        menu: "PRICING",
-        url: "/pricing"
-    },
-    {
-        menu: "Q&A",
-        url: "/qa"
-    },
-    {
-        menu: "CONTACT",
-        url: "/contact"
-    },
-]
+  {
+    menu: "TOP",
+    url: "/",
+  },
+  {
+    menu: "SERVICE",
+    url: "/#service",
+  },
+  {
+    menu: "PRODUCT",
+    url: "/#product",
+  },
+  {
+    menu: "PRICING",
+    url: "/pricing",
+  },
+  {
+    menu: "Q&A",
+    url: "/qa",
+  },
+  {
+    menu: "CONTACT",
+    url: "/contact",
+  },
+];
 ---
-<div class="sp-nav fixed h-[100dvh] w-[100vw] bg-[#f2b174] left-[50%] top-[0] z-[50] max-w-[500px] translate-x-[-50%]">
-    <ul class="flex flex-col justify-center items-center h-full w-full gap-y-[24px] mt-[-48px]">
-        {navMenu.map(item => (
-            <li class="">
-                <a rel="prefetch" class="SpNavAnc block text-[24px] font-m font-[700] tracking-[0.05em] text-white" href={item.url}>{item.menu}</a>
-            </li>
-        ))}
-        <ul class="flex gap-x-[24px] items-center">
-            <li>
-                <a href="https://www.instagram.com/haku_webdesign/" target="_blank" rel="noopener noreferrer">
-                    <img
-                        width="28"
-                        class=""
-                        src="/images/top/sns1.svg"
-                        alt="instagram"
-                    />
-                </a>
-            </li>
-            <li>
-                <a href="https://www.tiktok.com/@haku7371" target="_blank" rel="noopener noreferrer">
-                    <img
-                        width="28"
-                        class=""
-                        src="/images/top/sns2.svg"
-                        alt="tictok"
-                    />
-                </a>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/@haku_webdesign" target="_blank" rel="noopener noreferrer">
-                    <img
-                        width="32"
-                        class=""
-                        src="/images/top/sns3.svg"
-                        alt="youtube"
-                    />
-                </a>
-            </li>
-            <li>
-                <a href="https://lin.ee/46QDyVC" target="_blank" rel="noopener noreferrer">
-                    <img
-                        width="28"
-                        class=""
-                        src="/images/top/sns4.svg"
-                        alt="LINE"
-                    />
-                </a>
-            </li>
-        </ul>
+
+<div
+  class="sp-nav fixed h-[100dvh] w-[100vw] bg-[#f2b174] left-[50%] top-[0] z-[50] max-w-[500px] translate-x-[-50%]"
+>
+  <ul
+    class="flex flex-col justify-center items-center h-full w-full gap-y-[24px] mt-[-48px]"
+  >
+    {
+      navMenu.map((item) => (
+        <li class="">
+          <a
+            rel="prefetch"
+            class="SpNavAnc block text-[24px] font-m font-[700] tracking-[0.05em] text-white"
+            href={item.url}
+          >
+            {item.menu}
+          </a>
+        </li>
+      ))
+    }
+    <ul class="flex gap-x-[24px] items-center">
+      <li>
+        <a
+          href="https://www.instagram.com/haku_webdesign/"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="gtag('event', 'instagram_click', {'event_category': 'CTA', 'event_label': 'Instagram (ホームページ)', 'page_type': 'homepage'});"
+        >
+          <img width="28" class="" src="/images/top/sns1.svg" alt="instagram" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.tiktok.com/@haku7371"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="gtag('event', 'tiktok_click', {'event_category': 'CTA', 'event_label': 'Tik tok (ホームページ)', 'page_type': 'homepage'});"
+        >
+          <img width="28" class="" src="/images/top/sns2.svg" alt="tictok" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/@haku_webdesign"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="gtag('event', 'youtube_click', {'event_category': 'CTA', 'event_label': 'Youtube (ホームページ)', 'page_type': 'homepage'});"
+        >
+          <img width="32" class="" src="/images/top/sns3.svg" alt="youtube" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://lin.ee/46QDyVC"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="gtag('event', 'line_click', {'event_category': 'CTA', 'event_label': 'LINE公式 (ホームページ)', 'page_type': 'homepage'});"
+        >
+          <img width="28" class="" src="/images/top/sns4.svg" alt="LINE" />
+        </a>
+      </li>
     </ul>
-    <img
-        class="absolute top-[120px] z-30 right-[20px] w-[120px]"
-        src="/images/top/dori.png"
-        alt="ドリブルめん"
-        width="140"
-    />
-    <img
-        class="absolute top-[32px] w-[140px] z-30 left-[4px]"
-        src="/images/top/riba.png"
-        alt="リバオー"
-        width="140"
-    />
-    <img
-        class="absolute bottom-[32px] w-[160px] z-30 right-[0]"
-        src="/images/top/shuto.png"
-        alt="シュートメン"
-        width="140"
-    />
-    <img
-        class="absolute bottom-[32px] w-[140px] z-30 left-[0]"
-        src="/images/top/faru.png"
-        alt="ファルコさん"
-        width="140"
-    />
-    <img
-        class="absolute bottom-[232px] w-[140px] z-30 left-[-30px]"
-        src="/images/top/pass.png"
-        alt="パッシーくん"
-        width="140"
-    />
+  </ul>
+  <img
+    class="absolute top-[120px] z-30 right-[20px] w-[120px]"
+    src="/images/top/dori.png"
+    alt="ドリブルめん"
+    width="140"
+  />
+  <img
+    class="absolute top-[32px] w-[140px] z-30 left-[4px]"
+    src="/images/top/riba.png"
+    alt="リバオー"
+    width="140"
+  />
+  <img
+    class="absolute bottom-[32px] w-[160px] z-30 right-[0]"
+    src="/images/top/shuto.png"
+    alt="シュートメン"
+    width="140"
+  />
+  <img
+    class="absolute bottom-[32px] w-[140px] z-30 left-[0]"
+    src="/images/top/faru.png"
+    alt="ファルコさん"
+    width="140"
+  />
+  <img
+    class="absolute bottom-[232px] w-[140px] z-30 left-[-30px]"
+    src="/images/top/pass.png"
+    alt="パッシーくん"
+    width="140"
+  />
 </div>
 
 <style>
-    .sp-nav {
-        left: 50%;
-        transform: translateX(50%);
-        transition: cubic-bezier(0,0,0,1) .3s all;
-        opacity: 0;
-        visibility: hidden;
-    }
+  .sp-nav {
+    left: 50%;
+    transform: translateX(50%);
+    transition: cubic-bezier(0, 0, 0, 1) 0.3s all;
+    opacity: 0;
+    visibility: hidden;
+  }
 
-    .sp-nav.active {
-        left: 50%;
-        transform: translateX(-50%);
-        opacity: 1;
-        visibility: visible;
-    }
+  .sp-nav.active {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    visibility: visible;
+  }
 </style>

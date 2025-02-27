@@ -21,7 +21,10 @@
       <img src="/images/lp/contact/contact-phone.svg" alt="電話アイコン" />
       <h3>お電話でのご相談</h3>
       <p>(10:00~19:00対応)</p>
-      <a href="tel:08039680313">
+      <a
+        href="tel:08039680313"
+        onclick="gtag('event', 'call_click', {'event_category': 'CTA', 'event_label': '電話ボタン (LP)', 'page_type': 'lp'});"
+      >
         080-3968-0313
         <img src="/images/common/external-icon.svg" alt="外部リンクアイコン" />
       </a>
@@ -35,6 +38,7 @@
         href="https://docs.google.com/forms/d/e/1FAIpQLSeV8T9KsjG2MbqX57n4Jv8CU-wHeRsxhitiSpYx7JLSqbzJKQ/viewform?usp=pp_url"
         target="_blank"
         rel="noopener noreferrer"
+        onclick="gtag('event', 'form_click', {'event_category': 'CTA', 'event_label': 'Googleフォーム (LP)', 'page_type': 'lp'});"
       >
         フォームへ移動
         <img src="/images/common/external-icon.svg" alt="外部リンクアイコン" />
@@ -54,6 +58,7 @@
         href="https://lin.ee/EVn5p0C"
         target="_blank"
         rel="noopener noreferrer"
+        onclick="gtag('event', 'line_click', {'event_category': 'CTA', 'event_label': 'LINE公式 (LP)', 'page_type': 'lp'});"
       >
         公式LINEへ
         <img src="/images/common/external-icon.svg" alt="外部リンクアイコン" />
@@ -71,6 +76,7 @@
         href="https://www.instagram.com/haku_webdesign/"
         target="_blank"
         rel="noopener noreferrer"
+        onclick="gtag('event', 'instagram_click', {'event_category': 'CTA', 'event_label': 'Instagram (LP)', 'page_type': 'lp'});"
       >
         Instagramへ移動
         <img src="/images/common/external-icon.svg" alt="外部リンクアイコン" />

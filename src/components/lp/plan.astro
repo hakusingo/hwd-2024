@@ -58,6 +58,23 @@ const planItems = [
     ],
     bgColor: "#F6594D",
   },
+  {
+    name: "ウェブ集客サブスクプラン",
+    price: "100,000/月",
+    description: "ウェブマーケティングをまるっとお任せ！",
+    features: [
+      "ホームページ制作・修正・更新",
+      "SNS企画立案・コンテンツ制作・運用代行",
+      "集客戦略立案・データ分析・広告運用（PPC・Meta）",
+      "DTP制作（名刺・チラシ・資料作成・ショート動画）",
+      "月1回の定例会議で状況を分析＆提案",
+      "ウェブマーケティング教育も対応可能",
+      "新規開拓サポート（広告やLP活用）",
+      "契約期間の縛りなし（1ヶ月前の申請で解約OK）",
+      "年間契約なら特別プランもご相談可能",
+    ],
+    bgColor: "#D4AF37", // ゴールド系でプレミアム感を演出
+  },
 ];
 
 const planOptions = [
@@ -104,7 +121,7 @@ const planOptions = [
     >
       <h2 class="plan-header z-[100] relative flex flex-col items-center">
         <span class="text-[24px]"
-          >選べる<span class="text-[42px] text-c_yellow">4</span>つの</span
+          >選べる<span class="text-[42px] text-c_yellow">5</span>つの</span
         >
         <span class="text-[42px] block font-[700] whitespace-nowrap"
           >料金プラン</span
@@ -213,6 +230,7 @@ const planOptions = [
             class="w-[365px] border-[2px] border-[#fff] rounded-[30px] py-[8px] flex flex-col items-center bg-gradient-to-b from-[#0091ea] to-[#006bb3] text-white"
             target="_blank"
             rel="noopener noreferrer"
+            onclick="gtag('event', 'form_click', {'event_category': 'CTA', 'event_label': 'GoogleSNSフォーム (LP)', 'page_type': 'lp'});"
           >
             <span class="text-[14px] font-[500]">集客に必須のSNSを簡単代行</span
             >

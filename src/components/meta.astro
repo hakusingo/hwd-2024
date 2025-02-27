@@ -15,7 +15,22 @@ const canonicalURL = new URL(
 const socialImageURL = new URL(pageImg, Astro.site);
 ---
 
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
 <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EHPCHK8N2"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-3EHPCHK8N2");
+</script>
+<!-- Google Tag Manager -->
 <script>
   (function (w, d, s, l, i) {
     w[l] = w[l] || [];
@@ -26,13 +41,9 @@ const socialImageURL = new URL(pageImg, Astro.site);
     j.async = true;
     j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
     f.parentNode.insertBefore(j, f);
-  })(window, document, "script", "dataLayer", "GTM-M6Z8M8N2");
+  })(window, document, "script", "dataLayer", "GTM-KWMTC8JP");
 </script>
 <!-- End Google Tag Manager -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
-<meta name="generator" content={Astro.generator} />
-
 <title>
   {title}
 </title>
