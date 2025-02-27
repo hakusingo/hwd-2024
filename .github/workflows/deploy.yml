@@ -28,3 +28,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: /haku-design.net/public_html/ # ドメインフォルダを含めたパス
+          protocol: ftps # FTPSを使用
+          port: 21 # 標準のFTPSポート
+          security: strict # セキュリティレベルを設定
