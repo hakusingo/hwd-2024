@@ -31,3 +31,4 @@ jobs:
           protocol: ftps # FTPSを使用
           port: 21 # 標準のFTPSポート
           security: strict # セキュリティレベルを設定
+          # テスト用コメント追加
