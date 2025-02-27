@@ -21,7 +21,11 @@ import hero from "/src/images/lp/header/header_log.png";
     </a>
 
     <div class="flex gap-x-[16px] items-center">
-      <a href="tel:080-3968-0313" class="flex items-center gap-x-[8px]">
+      <a
+        href="tel:080-3968-0313"
+        class="flex items-center gap-x-[8px]"
+        onclick="gtag('event', 'phone_click', {'event_category': 'CTA', 'event_label': '電話番号クリック', 'page_type': 'lp'});"
+      >
         <img src="/images/lp/header/phone_blk.svg" alt="電話" />
         <!-- <span class="text-[18px] font-[700] hidden lg:block">080-3968-0313</span> -->
       </a>

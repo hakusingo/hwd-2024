@@ -31,7 +31,11 @@ const props = Astro.props;
         <img src="/images/lp/contact/contact-phone.svg" alt="電話アイコン" />
         <h3>お電話でのご相談</h3>
         <p>(10:00~19:00対応)</p>
-        <a href="tel:08039680313" class="pointer-events-none">
+        <a
+          href="tel:08039680313"
+          onclick="gtag('event', 'phone_click', {'event_category': 'CTA', 'event_label': '電話番号クリック', 'page_type': 'lp'});"
+          class="pointer-events-none"
+        >
           080-3968-0313
         </a>
       </div>

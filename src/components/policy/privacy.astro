@@ -1,99 +1,129 @@
 ---
-import Container from '../container.astro';
-import Ttl from '../util/ttl.astro';
-
-
+import Container from "../container.astro";
+import Ttl from "../util/ttl.astro";
 ---
 
-<Container >
-    <Ttl ttl="プライバシーポリシー" mt="mt-[80px] mb-[40px]" />
-    <div class="max-w-[400px] px-[24px] mx-auto leading-[1.6] tracking-[0.05em] pb-[400px]">
-        <p>Hakuウェブデザイン（以下「当社」といいます）は、お客様のプライバシーを尊重し、個人情報の保護に努めます。本プライバシーポリシーは、当社が収集する個人情報の種類、使用目的、保管方法、およびお客様の権利について説明します。</p>
+<Container>
+  <Ttl ttl="プライバシーポリシー" mt="mt-[80px] mb-[40px]" />
+  <div
+    class="max-w-[400px] px-[24px] mx-auto leading-[1.6] tracking-[0.05em] pb-[400px]"
+  >
+    <p>
+      Hakuウェブデザイン（以下「当社」といいます）は、お客様のプライバシーを尊重し、個人情報の保護に努めます。本プライバシーポリシーは、当社が収集する個人情報の種類、使用目的、保管方法、およびお客様の権利について説明します。
+    </p>
 
-        <h2 class="text-xl font-semibold mt-6 mb-2">1. 収集する情報の種類</h2>
-        <p>当社は、Googleフォームを通じて以下の個人情報を収集することがあります。</p>
-        <ul class="list-disc ml-5">
-            <li>お名前</li>
-            <li>メールアドレス</li>
-            <li>電話番号（任意）</li>
-            <li>お問い合わせ内容</li>
-        </ul>
+    <h2 class="text-xl font-semibold mt-6 mb-2">1. 収集する情報の種類</h2>
+    <p>
+      当社は、Googleフォームを通じて以下の個人情報を収集することがあります。
+    </p>
+    <ul class="list-disc ml-5">
+      <li>お名前</li>
+      <li>メールアドレス</li>
+      <li>電話番号（任意）</li>
+      <li>お問い合わせ内容</li>
+    </ul>
 
-        <h2 class="text-xl font-semibold mt-6 mb-2">2. 情報の使用目的</h2>
-        <p>当社は、収集した個人情報を以下の目的で使用します。</p>
-        <ul class="list-disc ml-5">
-            <li>お問い合わせに対する回答および対応</li>
-            <li>サービスの提供および改善</li>
-            <li>お客様への重要な通知や連絡</li>
-        </ul>
+    <h2 class="text-xl font-semibold mt-6 mb-2">2. 情報の使用目的</h2>
+    <p>当社は、収集した個人情報を以下の目的で使用します。</p>
+    <ul class="list-disc ml-5">
+      <li>お問い合わせに対する回答および対応</li>
+      <li>サービスの提供および改善</li>
+      <li>お客様への重要な通知や連絡</li>
+    </ul>
 
-        <h2 class="text-xl font-semibold mt-6 mb-2">3. 情報の保管方法</h2>
-        <p>当社は、収集した個人情報を適切に保管し、不正アクセス、紛失、破壊、改ざんおよび漏洩から保護するために必要な措置を講じます。個人情報の保管期間は、情報の収集目的を達成するために必要な期間とします。</p>
+    <h2 class="text-xl font-semibold mt-6 mb-2">3. 情報の保管方法</h2>
+    <p>
+      当社は、収集した個人情報を適切に保管し、不正アクセス、紛失、破壊、改ざんおよび漏洩から保護するために必要な措置を講じます。個人情報の保管期間は、情報の収集目的を達成するために必要な期間とします。
+    </p>
 
-        <h2 class="text-xl font-semibold mt-6 mb-2">4. 第三者への提供</h2>
-        <p>当社は、以下の場合を除き、お客様の個人情報を第三者に提供することはありません。</p>
-        <ul class="list-disc ml-5">
-            <li>お客様の同意がある場合</li>
-            <li>法令に基づく場合</li>
-            <li>人の生命、身体または財産の保護のために必要がある場合であって、お客様の同意を得ることが困難である場合</li>
-        </ul>
+    <h2 class="text-xl font-semibold mt-6 mb-2">4. 第三者への提供</h2>
+    <p>
+      当社は、以下の場合を除き、お客様の個人情報を第三者に提供することはありません。
+    </p>
+    <ul class="list-disc ml-5">
+      <li>お客様の同意がある場合</li>
+      <li>法令に基づく場合</li>
+      <li>
+        人の生命、身体または財産の保護のために必要がある場合であって、お客様の同意を得ることが困難である場合
+      </li>
+    </ul>
 
-        <h2 class="text-xl font-semibold mt-6 mb-2">5. クッキー（Cookie）について</h2>
-        <p>当社のウェブサイトでは、クッキーを使用してユーザーの利便性を向上させるための情報を収集することがあります。クッキーは、お客様のブラウザ設定で無効にすることができますが、その場合、当社のウェブサイトの一部機能がご利用いただけなくなることがあります。</p>
+    <h2 class="text-xl font-semibold mt-6 mb-2">
+      5. クッキー（Cookie）について
+    </h2>
+    <p>
+      当社のウェブサイトでは、クッキーを使用してユーザーの利便性を向上させるための情報を収集することがあります。クッキーは、お客様のブラウザ設定で無効にすることができますが、その場合、当社のウェブサイトの一部機能がご利用いただけなくなることがあります。
+    </p>
 
-        <h2 class="text-xl font-semibold mt-6 mb-2">6. お客様の権利</h2>
-        <p>お客様は、当社に対して以下の権利を行使することができます。</p>
-        <ul class="list-disc ml-5">
-            <li>個人情報の閲覧、修正および削除の請求</li>
-            <li>個人情報の処理の制限および反対の請求</li>
-            <li>データポータビリティの請求</li>
-        </ul>
-        <p>これらの権利を行使する場合は、下記の「9. お問い合わせ先」までご連絡ください。</p>
+    <h2 class="text-xl font-semibold mt-6 mb-2">6. お客様の権利</h2>
+    <p>お客様は、当社に対して以下の権利を行使することができます。</p>
+    <ul class="list-disc ml-5">
+      <li>個人情報の閲覧、修正および削除の請求</li>
+      <li>個人情報の処理の制限および反対の請求</li>
+      <li>データポータビリティの請求</li>
+    </ul>
+    <p>
+      これらの権利を行使する場合は、下記の「9.
+      お問い合わせ先」までご連絡ください。
+    </p>
 
-        <h2 class="text-xl font-semibold mt-6 mb-2">7. プライバシーポリシーの変更</h2>
-        <p>当社は、本プライバシーポリシーを必要に応じて改定することがあります。改定後のプライバシーポリシーは、当社のウェブサイトに掲載された時点で効力を生じます。</p>
+    <h2 class="text-xl font-semibold mt-6 mb-2">
+      7. プライバシーポリシーの変更
+    </h2>
+    <p>
+      当社は、本プライバシーポリシーを必要に応じて改定することがあります。改定後のプライバシーポリシーは、当社のウェブサイトに掲載された時点で効力を生じます。
+    </p>
 
-        <h2 class="text-xl font-semibold mt-6 mb-2">8. 法令遵守</h2>
-        <p>当社は、個人情報の保護に関する日本の法令およびその他の規範を遵守します。</p>
+    <h2 class="text-xl font-semibold mt-6 mb-2">8. 法令遵守</h2>
+    <p>
+      当社は、個人情報の保護に関する日本の法令およびその他の規範を遵守します。
+    </p>
 
-        <h2 class="text-xl font-semibold mt-6 mb-2">9. お問い合わせ先</h2>
-        <p>本プライバシーポリシーに関するお問い合わせは、以下の連絡先までご連絡ください。</p>
-        <a href="https://forms.gle/GLG9RKDhiDNEM75e6" class="bg-yellow-200 block mt-[24px] p-[4px] text-center border-[4px] border-[black] max-w-[300px] mx-auto font-[700]" target="_blank" rel="noopener">
-            グーグルフォームへ
-        </a>
-        <img
-            class="absolute top-[-600px] left-[-100px] z-[20]"
-            src="/images/common/circle-top.svg"
-            alt="circle"
-        />
-        <img
-            class="absolute top-[10%] right-[-100px] z-[-1]"
-            src="/images/common/circle-mid.svg"
-            alt="circle"
-        />
-        <img
-            class="absolute bottom-[30%] left-[-72px] z-[-1]"
-            src="/images/common/circle-bottom.svg"
-            alt="circle"
-        />
-        <img
-            class="absolute target bottom-[120px] w-[180px] z-30 right-[0]"
-            src="/images/top/faru.png"
-            alt="ファルコさん"
-            width="140"
-        />
-        <img
-            class="underCircle absolute z-[20] bottom-0 right-[0px] left-[0px] max-w-[unset] w-full"
-            src="/images/common/under-curve-footer.svg"
-            alt="circle"
-        />
-    </div>
-
+    <h2 class="text-xl font-semibold mt-6 mb-2">9. お問い合わせ先</h2>
+    <p>
+      本プライバシーポリシーに関するお問い合わせは、以下の連絡先までご連絡ください。
+    </p>
+    <a
+      href="https://forms.gle/GLG9RKDhiDNEM75e6"
+      class="bg-yellow-200 block mt-[24px] p-[4px] text-center border-[4px] border-[black] max-w-[300px] mx-auto font-[700]"
+      target="_blank"
+      rel="noopener"
+      onclick="gtag('event', 'form_click', {'event_category': 'CTA', 'event_label': 'プライバシーポリシーフォーム (ホームページ)', 'page_type': 'homepage'});"
+    >
+      グーグルフォームへ
+    </a>
+    <img
+      class="absolute top-[-600px] left-[-100px] z-[20]"
+      src="/images/common/circle-top.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute top-[10%] right-[-100px] z-[-1]"
+      src="/images/common/circle-mid.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute bottom-[30%] left-[-72px] z-[-1]"
+      src="/images/common/circle-bottom.svg"
+      alt="circle"
+    />
+    <img
+      class="absolute target bottom-[120px] w-[180px] z-30 right-[0]"
+      src="/images/top/faru.png"
+      alt="ファルコさん"
+      width="140"
+    />
+    <img
+      class="underCircle absolute z-[20] bottom-0 right-[0px] left-[0px] max-w-[unset] w-full"
+      src="/images/common/under-curve-footer.svg"
+      alt="circle"
+    />
+  </div>
 </Container>
 
 <style>
-    h4 {
-        margin-bottom: 12px;
-        font-weight: 700;
-    }
+  h4 {
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
 </style>
