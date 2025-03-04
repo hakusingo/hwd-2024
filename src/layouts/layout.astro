@@ -32,5 +32,24 @@ const props = Astro.props;
 
     <script src="/js/splide.min.js" defer></script>
     <script src="/js/main.js" defer></script>
-  </body>
+  </body><script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a").forEach(function (link) {
+        if (
+          link.href.includes("lin.ee") ||
+          link.href.includes("forms.gle") ||
+          link.href.includes("instagram.com") ||
+          link.href.startsWith("tel:")
+        ) {
+          link.addEventListener("click", function () {
+            gtag("event", "conversion", {
+              send_to: "AW-764915090/A86gCKun5OYZEJLb3uwC",
+              value: 1.0,
+              currency: "JPY",
+            });
+          });
+        }
+      });
+    });
+  </script>
 </html>
